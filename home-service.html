@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Home Service - Weighspot Scales Lahore</title>
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg">
+
+    <meta name="description" content="Book a home service with Weighspot Scales Lahore. Fill in your details and we'll get back to you via WhatsApp.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-blue: #044ca1;
+            --primary-dark: #033378;
+            --primary-light: #e8f0fe;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --accent-orange: #e67e22;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(4, 76, 161, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-dark);
+            background-color: #f0f2f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        img {
+            max-width: 100%;
+            display: block;
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0px 20px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-on-load { animation: fadeInUp 0.7s ease forwards; }
+
+        .ayah-top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 12px 20px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.25);
+        }
+
+        .ayah-top-bar .ayah-text {
+            font-family: 'Noto Kufi Arabic', 'Amiri', 'Traditional Arabic', serif;
+            font-size: small;
+            font-weight: 700;
+            line-height: 1.9;
+            direction: rtl;
+            letter-spacing: 0.3px;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 16px; flex: 1; }
+
+        .logo { display: flex; align-items: center; flex-shrink: 0; }
+
+        .logo img { height: 42px; width: auto; transition: var(--transition); pointer-events: auto; }
+
+        .search-bar { flex: 1; max-width: 420px; position: relative; min-width: 160px; }
+
+        .search-bar input {
+            width: 100%;
+            padding: 9px 14px;
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--radius);
+            font-size: 13px;
+            transition: var(--transition);
+            background: var(--light-gray);
+            outline: none;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(4, 76, 161, 0.15);
+            background: var(--white);
+        }
+
+        .search-bar i {
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-blue);
+            color: white;
+            padding: 7px 12px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+        }
+
+        .header-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+        .header-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            font-size: 10px;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+
+        .header-action:hover { color: var(--primary-blue); }
+        .header-action i { font-size: 18px; }
+
+        nav {
+            background: var(--primary-blue);
+            border-bottom: 1px solid var(--primary-dark);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-menu { display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+
+        .nav-item {
+            padding: 12px 18px;
+            transition: var(--transition);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: var(--radius);
+        }
+
+        .nav-item:hover { color: var(--white); background: rgba(255, 255, 255, 0.18); }
+        .nav-item.active { color: var(--primary-blue); background: var(--white); }
+
+        .promo-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .promo-bar .container { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+        .promo-bar .orbitron { font-family: 'Orbitron', monospace; font-weight: 700; letter-spacing: 1px; }
+
+        .page-title-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-title-section h1 { font-family: 'Orbitron', monospace; font-size: 38px; font-weight: 800; }
+        .page-title-section h1 span { color: #ffd700; }
+        .page-title-section p { font-size: 16px; opacity: 0.9; margin-top: 8px; font-style: italic; }
+
+        .home-service-section { padding: 40px 20px 60px; max-width: 900px; margin: 0 auto; }
+
+        .home-service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .home-service-card .intro {
+            text-align: center;
+            margin-bottom: 28px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .home-service-card .intro i {
+            font-size: 42px;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .home-service-card .intro h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .home-service-card .intro p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .home-service-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .home-service-form .form-group { display: flex; flex-direction: column; }
+        .home-service-form .form-group.full { grid-column: 1 / -1; }
+
+        .home-service-form label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .home-service-form label .req { color: #e74c3c; margin-left: 2px; }
+
+        .home-service-form input,
+        .home-service-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+            background: #fafafa;
+        }
+
+        .home-service-form input:focus,
+        .home-service-form textarea:focus {
+            border-color: var(--accent-orange);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.12);
+        }
+
+        .home-service-form textarea { resize: vertical; min-height: 120px; }
+
+        .home-service-form .submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            margin-top: 22px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        .home-service-form .submit-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+        }
+
+        .home-service-form .submit-btn i { font-size: 22px; }
+
+        .home-service-form .form-note {
+            font-size: 12px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        .home-service-form .form-note i { color: var(--primary-blue); margin-right: 4px; }
+
+        .footer-divider {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+            padding: 0 20px;
+        }
+
+        .footer-divider .line { max-width: 1400px; margin: 0 auto; height: 1px; background: rgba(255, 255, 255, 0.15); }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 30px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 5px; }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover { color: white; padding-left: 4px; }
+
+        .footer-section p { font-size: 12px; color: rgba(255, 255, 255, 0.7); line-height: 1.8; }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info i { color: white; margin-top: 3px; width: 16px; font-size: 12px; }
+
+        .contact-info .dual-icons { display: inline-flex; gap: 4px; margin-top: 3px; }
+        .contact-info .dual-icons i { color: white; font-size: 12px; width: auto; margin-top: 0; }
+
+        .footer-social { display: flex; gap: 10px; margin-top: 10px; }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+        }
+
+        .footer-social a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-3px); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 16px;
+            text-align: center;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+         /* ===== STICKY RIGHT STACK ===== */
+        .sticky-right-stack {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 14px;
+        }
+
+        .book-service-fab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 22px;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #d35400 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(230, 126, 34, 0.4);
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .book-service-fab:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 32px rgba(230, 126, 34, 0.55);
+        }
+
+        .book-service-fab i {
+            font-size: 18px;
+        }
+
+        .review-fab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 22px;
+            background: #3394e4;
+            color: #ffffff;
+            border: none;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(230, 126, 34, 0.4);
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .review-fab:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 32px rgba(230, 126, 34, 0.55);
+        }
+
+        .review-fab i {
+            font-size: 18px;
+        }
+
+        .whatsapp-fab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            border-radius: 25px;
+            background: #25D366;
+            color: #fff;
+            font-size: 28px;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            animation: pulse 2.4s infinite;
+        }
+
+        .whatsapp-text {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6);
+        }
+        @media (max-width: 1024px) {
+            .header-left { flex-wrap: wrap; }
+            .search-bar { max-width: 100%; flex-basis: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .ayah-top-bar { padding: 6px 12px; }
+            .ayah-top-bar .ayah-text { font-size: 11px; line-height: 1.6; }
+            .header-main { flex-direction: column; align-items: stretch; gap: 8px; padding: 8px 16px; }
+            .header-left { flex-direction: column; align-items: stretch; gap: 10px; }
+            .logo { justify-content: center; }
+            .logo img { height: 36px; }
+            .search-bar { max-width: 100%; }
+            .header-right { justify-content: center; }
+            .nav-container { justify-content: center; padding: 0 8px; }
+            .nav-menu { justify-content: center; gap: 2px; }
+            .nav-item { padding: 7px 9px; font-size: 10.5px; }
+            .page-title-section h1 { font-size: 28px; }
+            .home-service-card { padding: 26px 18px; }
+            .home-service-card .intro h2 { font-size: 20px; }
+            .home-service-form .form-row { grid-template-columns: 1fr; gap: 12px; }
+            .home-service-form .submit-btn { font-size: 14px; padding: 13px 20px; }
+            .footer-content { grid-template-columns: 1fr; gap: 24px; }
+            .footer-section { text-align: center; }
+            .footer-section h3::after { left: 50%; transform: translateX(-50%); }
+            .contact-info { justify-content: center; }
+            .footer-social { justify-content: center; }
+            .whatsapp-float { width: 44px; height: 44px; font-size: 22px; bottom: 14px; right: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .ayah-top-bar { padding: 5px 10px; }
+            .ayah-top-bar .ayah-text { font-size: 10px; line-height: 1.5; }
+            .nav-item { padding: 6px 7px; font-size: 9.5px; }
+            .page-title-section h1 { font-size: 22px; }
+            .home-service-card { padding: 18px 14px; }
+            .home-service-card .intro i { font-size: 32px; }
+            .home-service-card .intro h2 { font-size: 17px; }
+            .header-action { font-size: 9px; }
+            .header-action i { font-size: 15px; }
+            .promo-bar { font-size: 11px; padding: 6px 12px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== AYAH TOP BAR ===== -->
+    <div class="ayah-top-bar">
+        <div class="container">
+            <div style="font-family: 'Noto Kufi Arabic';" class="ayah-text">
+                وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ <span style="color:yellow">وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ</span> ۚ ذَٰلِكَ خَيْرٌ وَأَحْسَنُ تَأْوِيلًا (٣٥) &emsp13;
+                "<span style="font-family: 'Noto Kufi Arabic';">اور جب ناپ کرو تو پورا ناپ کرو اور <span style="color:yellow"> بالکل صحیح ترازو سے وزن کرو</span> یہ بہتر ہے اور انجام کے اعتبار سے اچھا ہے۔</span>"
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-main">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Weighspot Scales">
+                </a>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search scales, weights, parts...">
+                    <i class="fas fa-search" onclick="searchProducts()"></i>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="privacy.html" class="header-action" style="font-size:10px; color:var(--text-light);">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="products.html" class="nav-item">Products</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="home-service.html" class="nav-item active">Book a Home Service</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PROMO BAR ===== -->
+    <div class="promo-bar">
+        <div class="container">
+            <span class="orbitron" style="font-size: 18px; letter-spacing: 2px;">
+                <i><b>It's Beyond Just Weighing</b></i>
+            </span>
+        </div>
+    </div>
+
+    <!-- ===== PAGE TITLE ===== -->
+    <section class="page-title-section">
+        <div class="container">
+            <h1 style="font-family: 'Orbitron', monospace;">Book a <span>Home Service</span></h1>
+            <p style="font-style:italic;">Fill the form below and we'll reach out via WhatsApp</p>
+        </div>
+    </section>
+
+    <!-- ===== FORM ===== -->
+    <section class="home-service-section">
+        <div class="home-service-card animate-on-load">
+
+            <div class="intro">
+                <i class="fas fa-screwdriver-wrench"></i>
+                <h2>Book a Home Service</h2>
+                <p>Need a technician to visit your home or business? Fill in the details below and we'll be notified instantly on WhatsApp. Our team will contact you as soon as possible to schedule your visit.</p>
+            </div>
+
+            <form class="home-service-form" id="homeServiceForm">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hsName">Full Name <span class="req">*</span></label>
+                        <input type="text" id="hsName" placeholder="e.g. Ahmed Khan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hsCompany">Company Name <span class="req">*</span></label>
+                        <input type="text" id="hsCompany" placeholder="e.g. ABC Traders" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hsAddress">Address <span class="req">*</span></label>
+                        <input type="text" id="hsAddress" placeholder="House/Shop, Street, Area, City" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hsNumber">Contact Number <span class="req">*</span></label>
+                        <input type="tel" id="hsNumber" placeholder="e.g. 0300-1234567" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label for="hsDescription">Describe the Issue / Service Needed <span class="req">*</span></label>
+                        <textarea id="hsDescription" placeholder="Please describe the issue with your product or the service you need in detail..." required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+
+                <p class="form-note">
+                    <i class="fas fa-info-circle"></i>
+                    When you click submit, WhatsApp will open with your request pre-filled. Just press send and our team will receive it instantly.
+                </p>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer-divider">
+        <div class="line"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Weighspot</h3>
+                <p><strong>WeighSpot Scales Lahore</strong> is a specialized provider of precision weighing solutions with over 20 years of industry experience. We deliver a comprehensive range of digital and analogue weighing systems—including custom platform scales, lab scales, load cells, weighing indicators, controllers, health scales, and truck weighbridges. Backed by our in-house fabrication workshop, we design equipment tailored to your exact specifications and capacity requirements. Beyond products, we distinguish ourselves through integrated after-sales support: a dedicated repair laboratory and on-site servicing available via flexible maintenance contracts. WeighSpot Scales is your trusted partner for measurement accuracy and operational reliability.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/weightonscaleslahore" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/weighspot.scales.lhr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@weighspotscaleslahore4245" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/923214070098" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@weighspotscaleslahore" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="home-service.html">Book a Home Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span><a href="https://maps.app.goo.gl/g44Z3Z8VAjXcHq249" target="_blank" style="color:inherit;">Shop #2, Prem Gali #4, Opp Islamia College Gate #2, Railway Road, Lahore</a></span>
+                </div>
+                <div class="contact-info">
+                    <span class="dual-icons">
+                        <i class="fas fa-phone"></i>
+                        <i class="fab fa-whatsapp"></i>
+                    </span>
+                    <span><a href="https://wa.me/923214070098" target="_blank" style="color:inherit;">0321-4070098</a></span>
+                </div>
+                <div class="contact-info">
+                    <span class="dual-icons">
+                        <i class="fas fa-phone"></i>
+                        <i class="fab fa-whatsapp"></i>
+                    </span>
+                    <span><a href="https://wa.me/923412929295" target="_blank" style="color:inherit;">0341-2929295</a></span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span><a href="mailto:weighspotscales@gmail.com" style="color:inherit;">weighspotscales@gmail.com</a></span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon-Sat: 11:00 AM - 7:00 PM</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2026 Weighspot Scales Lahore | All Rights Reserved | Designed with The Bridge Solutions</p>
+        </div>
+    </footer>
+
+     <!-- ===== STICKY RIGHT STACK ===== -->
+    <div class="sticky-right-stack">
+        <a href="https://wa.me/923214070098" target="_blank" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i> &nbsp;
+            <p class="whatsapp-text">Contact Us</p>
+        </a>
+        <a href="https://g.page/r/CZSRkhaMgEGFEBE/review" target="_blank" class="review-fab"
+            aria-label="Give us a Review">
+            <i class="fas fa-comment-dots"></i>
+            <span>Give us a Review</span>
+        </a>
+        <button class="book-service-fab" id="openServiceBtn" aria-label="Book a Home Service">
+            <i class="fas fa-screwdriver-wrench"></i>
+            <span>Book a Home Service</span>
+        </button>
+    </div>
+    <script>
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query.length > 0) {
+                window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchProducts();
+        });
+
+        document.getElementById('homeServiceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('hsName').value.trim();
+            const company = document.getElementById('hsCompany').value.trim();
+            const address = document.getElementById('hsAddress').value.trim();
+            const number = document.getElementById('hsNumber').value.trim();
+            const description = document.getElementById('hsDescription').value.trim();
+
+            if (!name || !company || !address || !number || !description) {
+                alert('Please fill all fields before submitting.');
+                return;
+            }
+
+            const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to book a home service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
+            window.open(`https://wa.me/923214070098?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+        });
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); }
+        });
+
+        console.log('✅ Home Service page loaded!');
+    </script>
+
+</body>
+
+</html>

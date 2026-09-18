@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://weighspot-scales-lahore.pk/sitemap.xml
+Disallow: /admin-supabase.html

@@ -1,0 +1,16 @@
+# =========================================================
+# WEIGHSPOT SCALES — APACHE REWRITE RULES
+# =========================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # ===== SKIP IF REAL FILE OR DIRECTORY =====
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # ===== PRODUCT SLUG URLs =====
+    RewriteRule ^product/([a-z0-9-]+)/?$ product-detail.html?slug=$1 [L,QSA]
+</IfModule>
