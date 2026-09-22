@@ -1671,7 +1671,7 @@
                 const relatedLink = p.slug ? `/products/${p.slug}.html` : `/product-detail.html?id=${p.id}`;
 
                 return `
-                    <div class="product-card" style="animation-delay:${i * 0.05}s;" onclick="window.location.href='${productLink}'">
+                    <div class="product-card" style="animation-delay:${i * 0.05}s;" onclick="window.location.href='${relatedLink}'">
                         <div class="product-image">
                             <img src="${mainImage}" alt="${escapeHtml(p.name)}" onerror="this.src='images/placeholder.png'">
                             <img class="card-brand-logo" src="/images/logo.png" alt="Weighspot" aria-hidden="true">
@@ -1681,7 +1681,7 @@
                             <div class="product-category">${escapeHtml(p.category || 'Uncategorized')}</div>
                             <div class="product-name">${escapeHtml(p.name || 'Product')}</div>
                             <div class="product-price">${priceHtml}</div>
-                            <button class="view-details" onclick="event.stopPropagation(); window.location.href='${productLink}'">
+                            <button class="view-details" onclick="event.stopPropagation(); window.location.href='${relatedLink}'">
                                 View Details <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
