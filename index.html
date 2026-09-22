@@ -23,27 +23,40 @@
     <meta property="og:type" content="website">
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Weighspotscales.pk",
-        "alternateName": ["Weighspot Scales", "Weighspotscales"],
-        "@type": "Organization",
-        "@id": "https://weighspotscales.pk/#organization",
-        "url": "https://weighspotscales.pk/",
-        "logo": "https://weighspotscales.pk/images/logo.png",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lahore",
-            "addressCountry": "PK"
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://weighspotscales.pk/#website",
+            "url": "https://weighspotscales.pk/",
+            "name": "Weighspotscales.pk",
+            "alternateName": ["Weighspot Scales", "Weighspotscales"],
+            "publisher": {
+                "@id": "https://weighspotscales.pk/#organization"
+            }
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+92-321-4070098",
-            "contactType": "sales"
+        {
+            "@type": "Organization",
+            "@id": "https://weighspotscales.pk/#organization",
+            "name": "Weighspotscales.pk",
+            "alternateName": ["Weighspot Scales", "Weighspotscales"],
+            "url": "https://weighspotscales.pk/",
+            "logo": "https://weighspotscales.pk/images/logo.png",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lahore",
+                "addressCountry": "PK"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+92-321-4070098",
+                "contactType": "sales"
+            }
         }
-    }
-    </script>
+    ]
+}
+</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
