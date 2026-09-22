@@ -2846,7 +2846,7 @@
                 }
 
                 // ===== SLUG-BASED LINK =====
-                const relatedLink = p.slug ? `/product/${p.slug}` : `/product-detail.html?id=${p.id}`;
+                const relatedLink = p.slug ? `/products/${p.slug}.html` : `/product-detail.html?id=${p.id}`;
 
                 html += `
                     <div class="related-card" onclick="window.location.href='${relatedLink}'">

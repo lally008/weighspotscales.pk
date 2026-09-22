@@ -1668,7 +1668,7 @@
                 }
 
                 // ===== SLUG-BASED LINK =====
-                const productLink = p.slug ? `/product/${p.slug}` : `product-detail.html?id=${p.id}`;
+                const relatedLink = p.slug ? `/products/${p.slug}.html` : `/product-detail.html?id=${p.id}`;
 
                 return `
                     <div class="product-card" style="animation-delay:${i * 0.05}s;" onclick="window.location.href='${productLink}'">

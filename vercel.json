@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/product/:slug",
+      "destination": "/products/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/product/:slug.html",
+      "destination": "/products/:slug.html",
+      "permanent": true
+    }
+  ]
+}
