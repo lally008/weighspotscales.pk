@@ -24,8 +24,8 @@
         content="Weighspot Scales Lahore offers premium quality weighing scales, platform scales, load cells, and weighing indicators. 20+ years of excellence in Pakistan.">
     <meta name="keywords"
         content="weighing scales Lahore, platform scales, load cells, weighing indicators, digital scales, industrial scales">
-    <meta name="robots" content="noindex, follow">
-
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://weighspotscales.pk/products.html">
 
     <style>
         * {
@@ -1604,14 +1604,20 @@
                 }
             }
 
-            // ===== FILTER BY SEARCH =====
+            // ===== FILTER BY SEARCH (Universal / Flexible) =====
             if (currentSearch) {
-                const term = currentSearch.toLowerCase();
-                filtered = filtered.filter(p =>
-                    (p.name || '').toLowerCase().includes(term) ||
-                    (p.category || '').toLowerCase().includes(term) ||
-                    (p.description || '').toLowerCase().includes(term)
-                );
+                const term = normalizeSearchText(currentSearch);
+                filtered = filtered.filter(p => {
+                    const name = normalizeSearchText(p.name || '');
+                    const category = normalizeSearchText(p.category || '');
+                    const description = normalizeSearchText(p.description || '');
+                    const model = normalizeSearchText(p.model_number || '');
+
+                    return name.includes(term) ||
+                        category.includes(term) ||
+                        description.includes(term) ||
+                        model.includes(term);
+                });
             }
 
             // ===== SORTING =====
@@ -1662,7 +1668,7 @@
                 }
 
                 // ===== SLUG-BASED LINK =====
-                const productLink = p.slug ? `/product/${p.slug}.html` : `product-detail.html?id=${p.id}`;
+                const productLink = p.slug ? `/product/${p.slug}` : `product-detail.html?id=${p.id}`;
 
                 return `
                     <div class="product-card" style="animation-delay:${i * 0.05}s;" onclick="window.location.href='${productLink}'">
@@ -1700,6 +1706,20 @@
         });
 
         sortSelect.addEventListener('change', renderProducts);
+
+        // =========================================================
+        // ===== UNIVERSAL SEARCH HELPER =====
+        // =========================================================
+        // Normalizes text for flexible search:
+        // - Lowercase
+        // - Removes: hyphens, spaces, underscores, dots, commas, slashes
+        // - "ST-100" → "st100", "ST 100" → "st100", "ST100" → "st100"
+        // =========================================================
+        function normalizeSearchText(text) {
+            return String(text || '')
+                .toLowerCase()
+                .replace(/[\s\-_\.\,\(\)\[\]\{\}\/\\]+/g, ''); // remove spaces, hyphens, underscores, dots, commas, brackets, slashes
+        }
 
         function escapeHtml(value) {
             return String(value)

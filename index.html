@@ -11,10 +11,11 @@
     <meta name="description"
         content="Weighspot Scales Lahore offers premium quality weighing scales, platform scales, load cells, and weighing indicators. 20+ years of excellence in Pakistan.">
     <meta name="keywords"
-        content="weighing scales Lahore, platform scales, load cells, weighing indicators, digital scales, industrial scales, Weighspot Scales">
+        content="Weighing scales Lahore, platform scales, load cells, weighing indicators, digital scales, industrial scales, Weighspot Scales">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://weighspotscales.pk/">
 
+    <meta property="og:site_name" content="Weighspotscales.pk" />
     <meta property="og:title" content="Weighspot Scales - Premium Weighing Scale Solutions">
     <meta property="og:description" content="Premium quality weighing scales for home, healthcare, and industry.">
     <meta property="og:image" content="https://weighspotscales.pk/images/logo.png">
@@ -25,7 +26,10 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Weighspot Scales",
+        "name": "Weighspotscales.pk",
+        "alternateName": ["Weighspot Scales", "Weighspotscales"],
+        "@type": "Organization",
+        "@id": "https://weighspotscales.pk/#organization",
         "url": "https://weighspotscales.pk/",
         "logo": "https://weighspotscales.pk/images/logo.png",
         "address": {
@@ -703,7 +707,7 @@
 
         /* ===== PRODUCT CARD BRAND LOGO ===== */
 
-                .product-card .product-image .card-brand-logo {
+        .product-card .product-image .card-brand-logo {
             position: absolute;
             right: 12px;
             top: 80%;
@@ -727,7 +731,7 @@
 
         /* Mobile */
         @media (max-width: 768px) {
-           .product-card .product-image .card-brand-logo {
+            .product-card .product-image .card-brand-logo {
                 width: 120px;
                 height: 28px;
                 right: 5px;
@@ -1804,7 +1808,7 @@
         <div class="slider-container">
             <div class="slider-wrapper" id="sliderWrapper">
                 <div class="slider-slide">
-                    <img src="images/b1.png" alt="Weighing Solutions">
+                    <img src="images/b1.webp" alt="Weighing Solutions">
                     <div class="slide-overlay">
                         <h2>Precision <span>Weighing</span> Solutions</h2>
                         <p>20 years of excellence in weighing industry</p>
@@ -1812,7 +1816,7 @@
                     </div>
                 </div>
                 <div class="slider-slide">
-                    <img src="images/b2.png" alt="Platform Scales">
+                    <img src="images/b2.webp" alt="Platform Scales">
                     <div class="slide-overlay">
                         <h2>Heavy Duty <span>Platform</span> Scales</h2>
                         <p>Built for industrial environments with precision accuracy</p>
@@ -1820,7 +1824,7 @@
                     </div>
                 </div>
                 <div class="slider-slide">
-                    <img src="images/b3.png" alt="Lab Equipment">
+                    <img src="images/b3.webp" alt="Lab Equipment">
                     <div class="slide-overlay">
                         <h2>High-<span>Precision</span> Lab Equipment</h2>
                         <p>Analytical balances and laboratory weighing solutions</p>
@@ -1828,7 +1832,7 @@
                     </div>
                 </div>
                 <div class="slider-slide">
-                    <img src="images/b4.png" alt="Truck Weighbridge">
+                    <img src="images/b4.webp" alt="Truck Weighbridge">
                     <div class="slide-overlay">
                         <h2>Truck <span>Weighbridge</span> Solutions</h2>
                         <p>20 years of excellence in weighing industry</p>
@@ -1836,7 +1840,7 @@
                     </div>
                 </div>
                 <div class="slider-slide">
-                    <img src="images/b5.png" alt="Filling Machines">
+                    <img src="images/b5.webp" alt="Filling Machines">
                     <div class="slide-overlay">
                         <h2>Filling <span>Machines &</span> Batching System</h2>
                         <p>20 years of excellence in weighing industry</p>
@@ -1910,7 +1914,7 @@
     <section class="partners-section" aria-labelledby="trustedBrandPartnersTitle">
         <div class="section" style="padding:0 0 25px;">
             <h2 class="section-title" id="trustedBrandPartnersTitle"><i class="fas fa-handshake"></i> Trusted Brands
-                </h2>
+            </h2>
         </div>
         <div class="partners-track-wrapper">
             <div class="partners-track" id="trustedBrandsTrack"></div>
@@ -2215,7 +2219,7 @@
             }
         }
 
-               // ===== LOAD PRODUCTS =====
+        // ===== LOAD PRODUCTS =====
         async function loadProducts() {
             try {
                 const { data: latestProducts, error: prodError } = await supabaseClient
