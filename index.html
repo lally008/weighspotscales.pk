@@ -1757,6 +1757,159 @@
                 height: 60px;
             }
         }
+
+        /* ===== STICKY RIGHT STACK - MOBILE RESPONSIVE (CHOTA) ===== */
+        @media (max-width: 768px) {
+            .sticky-right-stack {
+                right: 8px;
+                bottom: 8px;
+                gap: 6px;
+            }
+
+            /* WhatsApp FAB */
+            .whatsapp-fab {
+                width: 115px !important;
+                height: 38px !important;
+                border-radius: 19px !important;
+                font-size: 18px !important;
+                padding: 0 10px !important;
+                gap: 5px !important;
+            }
+
+            .whatsapp-fab i {
+                font-size: 16px !important;
+            }
+
+            .whatsapp-text {
+                font-size: 10px !important;
+                font-weight: 700 !important;
+            }
+
+            /* Review FAB */
+            .review-fab {
+                padding: 8px 12px !important;
+                font-size: 10px !important;
+                border-radius: 30px !important;
+                gap: 5px !important;
+                box-shadow: 0 3px 12px rgba(51, 148, 228, 0.3) !important;
+            }
+
+            .review-fab i {
+                font-size: 12px !important;
+            }
+
+            /* Book Service FAB */
+            .book-service-fab {
+                padding: 8px 12px !important;
+                font-size: 10px !important;
+                border-radius: 30px !important;
+                gap: 5px !important;
+                box-shadow: 0 3px 12px rgba(230, 126, 34, 0.3) !important;
+            }
+
+            .book-service-fab i {
+                font-size: 12px !important;
+            }
+        }
+
+        /* ===== EXTRA SMALL MOBILE (480px) ===== */
+        @media (max-width: 480px) {
+            .sticky-right-stack {
+                right: 6px;
+                bottom: 6px;
+                gap: 5px;
+            }
+
+            /* WhatsApp FAB */
+            .whatsapp-fab {
+                width: 100px !important;
+                height: 34px !important;
+                border-radius: 17px !important;
+                font-size: 16px !important;
+                padding: 0 8px !important;
+                gap: 4px !important;
+            }
+
+            .whatsapp-fab i {
+                font-size: 14px !important;
+            }
+
+            .whatsapp-text {
+                font-size: 9px !important;
+            }
+
+            /* Review FAB */
+            .review-fab {
+                padding: 7px 10px !important;
+                font-size: 9px !important;
+                border-radius: 25px !important;
+                gap: 4px !important;
+            }
+
+            .review-fab i {
+                font-size: 10px !important;
+            }
+
+            /* Book Service FAB */
+            .book-service-fab {
+                padding: 7px 10px !important;
+                font-size: 9px !important;
+                border-radius: 25px !important;
+                gap: 4px !important;
+            }
+
+            .book-service-fab i {
+                font-size: 10px !important;
+            }
+        }
+
+        /* ===== VERY SMALL MOBILE (380px) ===== */
+        @media (max-width: 380px) {
+            .sticky-right-stack {
+                right: 5px;
+                bottom: 5px;
+                gap: 4px;
+            }
+
+            .whatsapp-fab {
+                width: 90px !important;
+                height: 30px !important;
+                border-radius: 15px !important;
+                font-size: 14px !important;
+                padding: 0 6px !important;
+                gap: 3px !important;
+            }
+
+            .whatsapp-fab i {
+                font-size: 12px !important;
+            }
+
+            .whatsapp-text {
+                font-size: 8px !important;
+            }
+
+            .review-fab {
+                padding: 6px 8px !important;
+                font-size: 8px !important;
+                border-radius: 20px !important;
+                gap: 3px !important;
+            }
+
+            .review-fab i {
+                font-size: 9px !important;
+            }
+
+            .book-service-fab {
+                padding: 6px 8px !important;
+                font-size: 8px !important;
+                border-radius: 20px !important;
+                gap: 3px !important;
+            }
+
+            .book-service-fab i {
+                font-size: 9px !important;
+            }
+        }
     </style>
 </head>
 
@@ -2131,13 +2284,13 @@
             const cancelBtn = document.getElementById('cancelServiceBtn');
             const form = document.getElementById('homeServiceForm');
 
-            function openModal() { overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-            function closeModal() { overlay.classList.remove('show'); document.body.style.overflow = ''; }
+            function openModal() {overlay.classList.add('show'); document.body.style.overflow = 'hidden';}
+            function closeModal() {overlay.classList.remove('show'); document.body.style.overflow = '';}
 
             openBtn.addEventListener('click', openModal);
             closeBtn.addEventListener('click', closeModal);
             cancelBtn.addEventListener('click', closeModal);
-            overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+            overlay.addEventListener('click', function (e) {if (e.target === overlay) closeModal();});
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -2161,10 +2314,10 @@
         // ===== LOAD CATEGORIES (WITH IMAGES) =====
         async function loadCategories() {
             try {
-                const { data, error } = await supabaseClient
+                const {data, error} = await supabaseClient
                     .from('categories')
                     .select('*')
-                    .order('name', { ascending: true });
+                    .order('name', {ascending: true});
 
                 if (error) throw error;
                 const allCats = data || [];
@@ -2235,18 +2388,18 @@
         // ===== LOAD PRODUCTS =====
         async function loadProducts() {
             try {
-                const { data: latestProducts, error: prodError } = await supabaseClient
+                const {data: latestProducts, error: prodError} = await supabaseClient
                     .from('products')
                     .select('*')
-                    .order('created_at', { ascending: false })
+                    .order('created_at', {ascending: false})
                     .limit(6);
 
                 if (prodError) throw prodError;
                 const products = latestProducts || [];
 
-                const { count: totalCount, error: countError } = await supabaseClient
+                const {count: totalCount, error: countError} = await supabaseClient
                     .from('products')
-                    .select('*', { count: 'exact', head: true });
+                    .select('*', {count: 'exact', head: true});
 
                 if (countError) throw countError;
 
@@ -2326,11 +2479,11 @@
         // ===== TRUSTED BRAND PARTNERS =====
         async function loadTrustedBrands() {
             try {
-                const { data, error } = await supabaseClient
+                const {data, error} = await supabaseClient
                     .from('trusted_brands')
                     .select('id, brand_name, image_url, alt_text, display_order')
-                    .order('display_order', { ascending: true })
-                    .order('created_at', { ascending: true });
+                    .order('display_order', {ascending: true})
+                    .order('created_at', {ascending: true});
 
                 if (error) throw error;
 
@@ -2354,11 +2507,11 @@
         // ===== VALUABLE CUSTOMERS =====
         async function loadValuableCustomers() {
             try {
-                const { data, error } = await supabaseClient
+                const {data, error} = await supabaseClient
                     .from('valuable_customers')
                     .select('id, customer_name, display_order')
-                    .order('display_order', { ascending: true })
-                    .order('created_at', { ascending: true });
+                    .order('display_order', {ascending: true})
+                    .order('created_at', {ascending: true});
 
                 if (error) throw error;
 
@@ -2386,9 +2539,9 @@
             const messageDiv = document.getElementById('newsletterMessage');
 
             try {
-                const { error } = await supabaseClient
+                const {error} = await supabaseClient
                     .from('subscribers')
-                    .insert([{ email: email, subscribed_at: new Date().toISOString() }]);
+                    .insert([{email: email, subscribed_at: new Date().toISOString()}]);
 
                 if (error) throw error;
 
@@ -2396,7 +2549,7 @@
                 messageDiv.style.color = '#ffd700';
                 messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for subscribing! You will be notified of new products.';
                 document.getElementById('newsletterEmail').value = '';
-                setTimeout(() => { messageDiv.style.display = 'none'; }, 5000);
+                setTimeout(() => {messageDiv.style.display = 'none';}, 5000);
             } catch (error) {
                 messageDiv.style.display = 'block';
                 messageDiv.style.color = '#ff6b6b';
@@ -2419,11 +2572,11 @@
                 if (index >= dots.length) index = 0;
                 currentIndex = index;
                 sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-                dots.forEach((dot, i) => { dot.classList.toggle('active', i === currentIndex); });
+                dots.forEach((dot, i) => {dot.classList.toggle('active', i === currentIndex);});
             }
-            function nextSlide() { goToSlide(currentIndex + 1); }
-            function startAutoSlide() { autoSlideInterval = setInterval(nextSlide, 4000); }
-            function stopAutoSlide() { clearInterval(autoSlideInterval); }
+            function nextSlide() {goToSlide(currentIndex + 1);}
+            function startAutoSlide() {autoSlideInterval = setInterval(nextSlide, 4000);}
+            function stopAutoSlide() {clearInterval(autoSlideInterval);}
 
             dots.forEach((dot) => {
                 dot.addEventListener('click', function () {
@@ -2450,13 +2603,13 @@
         }
 
         document.addEventListener('contextmenu', function (e) {
-            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+            if (e.target.tagName === 'IMG') {e.preventDefault(); return false;}
         });
         document.addEventListener('dragstart', function (e) {
-            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+            if (e.target.tagName === 'IMG') {e.preventDefault(); return false;}
         });
         document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); }
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {e.preventDefault();}
         });
 
         async function init() {
