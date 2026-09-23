@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{PRODUCT_NAME}} - Weighspot Scales Lahore</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/jpeg" href="/images/favicon.jpeg">
+
     <meta name="description" content="{{META_DESCRIPTION}}">
-    <link rel="canonical" href="https://weighspotscales.pk/products/{{SLUG}}">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://weighspotscales.pk/products/{{SLUG}}.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{PRODUCT_NAME}}">
     <meta property="og:description" content="{{META_DESCRIPTION}}">
     <meta property="og:image" content="{{MAIN_IMAGE}}">
-    <meta property="og:url" content="https://weighspotscales.pk/products/{{SLUG}}">
+    <meta property="og:url" content="https://weighspotscales.pk/products/{{SLUG}}.html">
     <meta property="og:type" content="product">
 
     <!-- Product Schema for Google -->
@@ -29,7 +33,7 @@
       "category": "{{CATEGORY}}",
       "offers": {
         "@type": "Offer",
-        "url": "https://weighspotscales.pk/products/{{SLUG}}",
+        "url": "https://weighspotscales.pk/products/{{SLUG}}.html",
         "priceCurrency": "PKR",
         "price": "{{PRICE}}",
         "availability": "https://schema.org/InStock"
@@ -37,14 +41,9 @@
     }
     </script>
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="icon" type="image/jpeg" href="/images/favicon.jpeg">
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
@@ -52,7 +51,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* ===== SAME CSS AS product-detail.html ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -94,7 +92,7 @@
             pointer-events: none;
         }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 0px 20px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
@@ -149,8 +147,10 @@
         }
 
         .header-left { display: flex; align-items: center; gap: 16px; flex: 1; }
+
         .logo { display: flex; align-items: center; flex-shrink: 0; }
-        .logo img { height: 42px; width: auto; transition: var(--transition); pointer-events: auto; }
+
+        .logo img { height: 42px; width: auto; pointer-events: auto; }
 
         .search-bar { flex: 1; max-width: 420px; position: relative; min-width: 160px; }
 
@@ -160,15 +160,8 @@
             border: 2px solid var(--primary-blue);
             border-radius: var(--radius);
             font-size: 13px;
-            transition: var(--transition);
             background: var(--light-gray);
             outline: none;
-        }
-
-        .search-bar input:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(4, 76, 161, 0.15);
-            background: var(--white);
         }
 
         .search-bar i {
@@ -193,12 +186,8 @@
             font-size: 10px;
             color: var(--text-dark);
             cursor: pointer;
-            transition: var(--transition);
-            background: none;
-            border: none;
         }
 
-        .header-action:hover { color: var(--primary-blue); }
         .header-action i { font-size: 18px; }
 
         /* ===== NAVIGATION ===== */
@@ -219,15 +208,13 @@
 
         .nav-item {
             padding: 12px 18px;
-            transition: var(--transition);
             color: #ffffff;
             font-size: 13px;
             font-weight: 600;
             border-radius: var(--radius);
         }
 
-        .nav-item:hover { color: var(--white); background: rgba(255, 255, 255, 0.18); }
-        .nav-item.active { color: var(--primary-blue); background: var(--white); }
+        .nav-item:hover { background: rgba(255, 255, 255, 0.18); }
 
         /* ===== PROMO BAR ===== */
         .promo-bar {
@@ -237,14 +224,6 @@
             text-align: center;
             font-size: 14px;
             font-weight: 600;
-        }
-
-        .promo-bar .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
         }
 
         .promo-bar .orbitron {
@@ -264,7 +243,6 @@
 
         .breadcrumb a { color: var(--primary-blue); font-weight: 600; }
         .breadcrumb a:hover { text-decoration: underline; }
-        .breadcrumb span { color: var(--text-dark); }
 
         /* ===== PRODUCT DETAIL ===== */
         .product-detail-section { padding: 16px 20px 40px; max-width: 1400px; margin: 0 auto; }
@@ -291,6 +269,7 @@
             align-items: center;
             justify-content: center;
             min-height: 450px;
+            cursor: zoom-in;
         }
 
         .product-detail-image img {
@@ -299,7 +278,6 @@
             object-fit: contain;
             max-height: 420px;
             padding: 16px;
-            transition: opacity 0.3s ease;
         }
 
         .product-detail-image .badge {
@@ -316,6 +294,25 @@
             z-index: 2;
         }
 
+        .product-detail-image #mainProductImage {
+            pointer-events: auto !important;
+            cursor: zoom-in !important;
+        }
+
+        .product-detail-image .card-brand-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            width: 70%;
+            max-width: 530px;
+            max-height: 55%;
+            object-fit: contain;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 10;
+        }
+
         .gallery-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
 
         .gallery-thumb {
@@ -326,7 +323,6 @@
             border: 2px solid var(--border-color);
             background: var(--light-gray);
             cursor: pointer;
-            transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -334,8 +330,13 @@
             pointer-events: auto;
         }
 
-        .gallery-thumb:hover { border-color: var(--primary-blue); transform: translateY(-2px); }
-        .gallery-thumb.active { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(4, 76, 161, 0.15); }
+        .gallery-thumb:hover { border-color: var(--primary-blue); }
+
+        .gallery-thumb.active {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(4, 76, 161, 0.15);
+        }
+
         .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; }
 
         .product-detail-info { display: flex; flex-direction: column; gap: 10px; }
@@ -366,13 +367,10 @@
             font-size: 12px;
             font-weight: 700;
             width: fit-content;
-            letter-spacing: 0.3px;
             border: 1px solid rgba(4, 76, 161, 0.15);
         }
 
-        .product-detail-info .model-number i { font-size: 11px; }
-
-        /* ===== RATING SYSTEM ===== */
+        /* ===== RATING ===== */
         .rating-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -394,15 +392,14 @@
             line-height: 1;
         }
 
-        .rating-stars-display i.far { color: #ddd; }
-
-        .rating-info { font-size: 13px; color: var(--text-dark); font-weight: 600; }
-        .rating-info .avg-number { font-size: 16px; font-weight: 800; color: var(--text-dark); }
+        .rating-info { font-size: 13px; font-weight: 600; }
+        .rating-info .avg-number { font-size: 16px; font-weight: 800; }
         .rating-info .count-text { font-weight: 500; color: var(--text-light); }
 
         .rating-divider { width: 1px; height: 24px; background: rgba(241, 196, 15, 0.3); }
 
         .rating-action { display: flex; flex-direction: column; gap: 4px; }
+
         .rating-action .give-rating-label { font-size: 11px; color: var(--text-light); font-weight: 500; }
 
         .star-rating {
@@ -410,7 +407,6 @@
             flex-direction: row-reverse;
             gap: 4px;
             cursor: pointer;
-            user-select: none;
             pointer-events: auto;
         }
 
@@ -420,7 +416,6 @@
             font-size: 22px;
             color: #ddd;
             cursor: pointer;
-            transition: all 0.15s ease;
             padding: 0 1px;
         }
 
@@ -433,11 +428,17 @@
 
         .star-rating.disabled label { pointer-events: none; opacity: 0.5; }
 
-        .rating-message { font-size: 12px; font-weight: 600; padding: 4px 0; min-height: 20px; }
+        .rating-message {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 0;
+            min-height: 20px;
+        }
+
         .rating-message.success { color: var(--star-gold); }
         .rating-message.error { color: #e74c3c; }
-        .rating-message.already { color: #f39c12; }
 
+        /* ===== PRICE ===== */
         .product-detail-info .price {
             display: flex;
             align-items: center;
@@ -479,9 +480,18 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .price-ask-container .ask-price-big { font-size: 24px; font-weight: 800; color: #f39c12; }
-        .price-ask-container .ask-price-sub { font-size: 14px; color: var(--text-light); }
+        .price-ask-container .ask-price-big {
+            font-size: 24px;
+            font-weight: 800;
+            color: #f39c12;
+        }
 
+        .price-ask-container .ask-price-sub {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ===== DESCRIPTION ===== */
         .product-detail-info .description {
             font-size: 14px;
             color: var(--text-light);
@@ -493,9 +503,8 @@
         .product-detail-info .description u { text-decoration: underline; }
         .product-detail-info .description s { text-decoration: line-through; opacity: 0.75; }
         .product-detail-info .description a { color: var(--primary-blue); text-decoration: underline; font-weight: 600; }
-        .product-detail-info .description a:hover { color: var(--primary-dark); }
 
-        /* ===== VIDEO EMBED ===== */
+        /* ===== VIDEO ===== */
         .product-video-wrapper {
             margin-top: 8px;
             background: var(--light-gray);
@@ -515,8 +524,6 @@
             font-weight: 700;
             border-bottom: 1px solid var(--border-color);
         }
-
-        .product-video-wrapper .video-label i { font-size: 14px; }
 
         .video-embed-container {
             position: relative;
@@ -538,55 +545,11 @@
             display: block;
         }
 
-        .social-embed-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            background: #fff;
-            min-height: 260px;
-            overflow: hidden;
-        }
-
-        .social-thumbnail {
-            position: relative;
-            display: block;
-            width: 100%;
-            max-width: 605px;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
+        .video-link-fallback {
+            padding: 16px 20px;
+            text-align: center;
             background: var(--light-gray);
-            text-decoration: none;
         }
-
-        .social-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        .social-thumbnail .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 58px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.72);
-            color: #fff;
-            font-size: 24px;
-        }
-
-        .social-thumbnail .thumbnail-fallback {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 13px;
-        }
-
-        .video-link-fallback { padding: 16px 20px; text-align: center; background: var(--light-gray); }
 
         .video-link-fallback a {
             display: inline-flex;
@@ -598,11 +561,9 @@
             border-radius: 30px;
             font-weight: 700;
             font-size: 13px;
-            transition: var(--transition);
         }
 
-        .video-link-fallback a:hover { background: var(--primary-dark); transform: translateY(-2px); }
-
+        /* ===== BUTTONS ===== */
         .whatsapp-buy-btn {
             display: inline-flex;
             align-items: center;
@@ -616,18 +577,13 @@
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
             text-decoration: none;
             width: 100%;
             max-width: 300px;
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
         }
 
-        .whatsapp-buy-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
-        }
-
+        .whatsapp-buy-btn:hover { transform: translateY(-2px) scale(1.02); }
         .whatsapp-buy-btn i { font-size: 24px; }
 
         .product-detail-info .action-buttons {
@@ -637,7 +593,7 @@
             margin-top: 4px;
         }
 
-        .product-detail-info .action-buttons .btn-outline {
+        .btn-outline {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -648,26 +604,15 @@
             font-weight: 600;
             font-size: 13px;
             color: var(--text-dark);
-            transition: var(--transition);
             background: transparent;
             cursor: pointer;
         }
 
-        .product-detail-info .action-buttons .btn-outline:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
-        }
+        .btn-outline:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
 
         /* ===== RELATED ===== */
         .related-section { padding: 30px 20px 20px; max-width: 1400px; margin: 0 auto; }
-
-        .related-section h2 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: var(--text-dark);
-        }
-
+        .related-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 18px; }
         .related-section h2 span { color: var(--primary-blue); }
 
         .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -677,8 +622,8 @@
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             overflow: hidden;
-            transition: var(--transition);
             cursor: pointer;
+            transition: var(--transition);
         }
 
         .related-card:hover {
@@ -693,9 +638,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             position: relative;
         }
+
+        .related-card .image img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
 
         .related-card .image .card-brand-logo {
             position: absolute;
@@ -704,129 +650,19 @@
             width: 80px;
             height: 38px;
             object-fit: contain;
-            padding: 0;
-            z-index: 5;
             pointer-events: none;
-        }
-
-        @media (max-width: 1024px) {
-            .related-card .image .card-brand-logo {
-                width: 105px;
-                height: 34px;
-                right: 6px;
-                top: 80%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .related-card .image .card-brand-logo {
-                width: 120px;
-                height: 28px;
-                right: 5px;
-                top: 80%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .related-card .image .card-brand-logo {
-                width: 50px;
-                height: 24px;
-                right: 4px;
-                top: 70%;
-            }
-        }
-
-        .product-detail-image .card-brand-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            right: auto;
-            transform: translate(-50%, -50%) rotate(-35deg);
-            width: 70%;
-            max-width: 530px;
-            height: auto;
-            max-height: 55%;
-            object-fit: contain;
-            opacity: 0.2;
-            padding: 0;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        @media (max-width: 1024px) {
-            .product-detail-image .card-brand-logo {
-                width: 65%;
-                max-width: 400px;
-                max-height: 50%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .product-detail-image .card-brand-logo {
-                width: 70%;
-                max-width: 350px;
-                max-height: 50%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-detail-image .card-brand-logo {
-                width: 75%;
-                max-width: 260px;
-                max-height: 50%;
-            }
-        }
-
-        .related-card .image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 10px;
         }
 
         .related-card .info { padding: 10px 14px 14px; }
-
-        .related-card .info h4 {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .related-card .info .price {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .card-brand-logo {
-            position: absolute;
-            top: 7px;
-            right: 7px;
-            width: 80px;
-            height: 38px;
-            object-fit: contain;
-            padding: 0;
-            z-index: 5;
-            pointer-events: none;
-        }
+        .related-card .info h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+        .related-card .info .price { font-size: 15px; font-weight: 700; color: var(--primary-blue); }
 
         /* ===== FOOTER ===== */
-        .footer-divider {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
-            padding: 0 20px;
-        }
-
-        .footer-divider .line {
-            max-width: 1400px;
-            margin: 0 auto;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
         footer {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
             color: var(--white);
             padding: 30px 20px 20px;
+            margin-top: 40px;
         }
 
         .footer-content {
@@ -842,9 +678,8 @@
             font-size: 15px;
             font-weight: 700;
             margin-bottom: 14px;
-            color: var(--white);
-            position: relative;
             padding-bottom: 8px;
+            position: relative;
         }
 
         .footer-section h3::after {
@@ -859,20 +694,10 @@
 
         .footer-section ul { list-style: none; }
         .footer-section ul li { margin-bottom: 5px; }
+        .footer-section ul li a { color: rgba(255, 255, 255, 0.7); font-size: 12px; }
+        .footer-section ul li a:hover { color: white; }
 
-        .footer-section ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-            transition: var(--transition);
-        }
-
-        .footer-section ul li a:hover { color: white; padding-left: 4px; }
-
-        .footer-section p {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-        }
+        .footer-section p { font-size: 12px; color: rgba(255, 255, 255, 0.7); line-height: 1.8; }
 
         .contact-info {
             display: flex;
@@ -883,25 +708,7 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .contact-info i {
-            color: white;
-            margin-top: 3px;
-            width: 16px;
-            font-size: 12px;
-        }
-
-        .contact-info .dual-icons {
-            display: inline-flex;
-            gap: 4px;
-            margin-top: 3px;
-        }
-
-        .contact-info .dual-icons i {
-            color: white;
-            font-size: 12px;
-            width: auto;
-            margin-top: 0;
-        }
+        .contact-info i { color: white; margin-top: 3px; width: 16px; font-size: 12px; }
 
         .footer-social { display: flex; gap: 10px; margin-top: 10px; }
 
@@ -914,12 +721,10 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             color: var(--white);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 14px;
         }
 
-        .footer-social a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-3px); }
+        .footer-social a:hover { background: rgba(255, 255, 255, 0.15); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -931,7 +736,72 @@
             margin: 0 auto;
         }
 
-        /* ===== STICKY RIGHT STACK ===== */
+        /* ===== LIGHTBOX ===== */
+        .image-lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            cursor: zoom-out;
+        }
+
+        .image-lightbox-overlay.show { display: flex; }
+
+        .lightbox-image-wrapper {
+            position: relative;
+            display: inline-flex;
+            max-width: 95vw;
+            max-height: 92vh;
+        }
+
+        .lightbox-image-wrapper img#lightboxImage {
+            max-width: 95vw;
+            max-height: 92vh;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #fff;
+            padding: 12px;
+            pointer-events: auto !important;
+        }
+
+        .lightbox-watermark-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            width: 70%;
+            max-width: 530px;
+            max-height: 55%;
+            object-fit: contain;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close-btn:hover { background: #e74c3c; border-color: #e74c3c; }
+
+        /* ===== STICKY STACK ===== */
         .sticky-right-stack {
             position: fixed;
             right: 24px;
@@ -956,16 +826,7 @@
             font-size: 14px;
             cursor: pointer;
             box-shadow: 0 6px 24px rgba(230, 126, 34, 0.4);
-            transition: var(--transition);
-            font-family: inherit;
         }
-
-        .book-service-fab:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 32px rgba(230, 126, 34, 0.55);
-        }
-
-        .book-service-fab i { font-size: 18px; }
 
         .review-fab {
             display: flex;
@@ -979,80 +840,36 @@
             font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 6px 24px rgba(230, 126, 34, 0.4);
-            transition: var(--transition);
-            font-family: inherit;
         }
-
-        .review-fab:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 32px rgba(230, 126, 34, 0.55);
-        }
-
-        .review-fab i { font-size: 18px; }
 
         .fab-whatsapp {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
-            width: auto;
-            min-width: 140px;
-            max-width: 180px;
-            height: 50px;
             padding: 0 18px;
+            height: 50px;
             border-radius: 25px;
             background: #25D366;
             color: #fff;
             font-size: 22px;
-            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
-            transition: var(--transition);
             animation: pulse 2.4s infinite;
-            white-space: nowrap;
-            flex-shrink: 0;
         }
 
-        .whatsapp-text { font-weight: 700; font-size: 14px; line-height: 1; margin: 0; }
-
-        .fab-whatsapp:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6);
-        }
-
-        @media (max-width: 768px) {
-            .fab-whatsapp {
-                min-width: 0;
-                max-width: none;
-                width: 50px;
-                height: 50px;
-                padding: 0;
-                border-radius: 50%;
-                font-size: 24px;
-                gap: 0;
-            }
-            .fab-whatsapp .whatsapp-text { display: none; }
-        }
-
-        @media (max-width: 480px) {
-            .fab-whatsapp { width: 46px; height: 46px; font-size: 22px; }
-        }
+        .whatsapp-text { font-weight: 700; font-size: 14px; }
 
         /* ===== SERVICE MODAL ===== */
         .service-modal-overlay {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
             z-index: 10000;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .service-modal-overlay.show { display: flex; opacity: 1; }
+        .service-modal-overlay.show { display: flex; }
 
         .service-modal {
             background: #fff;
@@ -1061,17 +878,12 @@
             width: 100%;
             max-height: 92vh;
             overflow-y: auto;
-            padding: 32px 30px 28px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-            position: relative;
-            transform: translateY(30px) scale(0.96);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 32px 30px;
             border-top: 5px solid var(--accent-orange);
+            position: relative;
         }
 
-        .service-modal-overlay.show .service-modal { transform: translateY(0) scale(1); }
-
-        .service-modal .modal-close {
+        .modal-close {
             position: absolute;
             top: 12px;
             right: 12px;
@@ -1081,50 +893,14 @@
             background: var(--light-gray);
             border: none;
             cursor: pointer;
-            color: var(--text-light);
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
         }
 
-        .service-modal .modal-close:hover { background: #e74c3c; color: white; transform: rotate(90deg); }
+        .service-modal h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+        .service-modal .modal-subtitle { font-size: 13px; color: var(--text-light); margin-bottom: 20px; }
 
-        .service-modal h2 {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-modal h2 i { color: var(--accent-orange); }
-
-        .service-modal .modal-subtitle {
-            font-size: 13px;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .service-modal .form-group { margin-bottom: 14px; }
-
-        .service-modal .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-        }
-
-        .service-modal .form-group label .req { color: #e74c3c; margin-left: 2px; }
-
-        .service-modal .form-group input,
-        .service-modal .form-group textarea {
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 11px 14px;
             border: 1.5px solid var(--border-color);
@@ -1132,22 +908,13 @@
             font-size: 14px;
             font-family: inherit;
             outline: none;
-            transition: var(--transition);
-            background: #fafafa;
         }
 
-        .service-modal .form-group input:focus,
-        .service-modal .form-group textarea:focus {
-            border-color: var(--accent-orange);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.12);
-        }
+        .form-group textarea { resize: vertical; min-height: 90px; }
 
-        .service-modal .form-group textarea { resize: vertical; min-height: 90px; }
+        .modal-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
 
-        .service-modal .modal-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-
-        .service-modal .btn-whatsapp-submit {
+        .btn-whatsapp-submit {
             flex: 1;
             display: inline-flex;
             align-items: center;
@@ -1160,225 +927,48 @@
             border-radius: 60px;
             font-weight: 700;
             font-size: 15px;
-            font-family: inherit;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-            min-width: 200px;
         }
 
-        .service-modal .btn-whatsapp-submit:hover {
-            background: #1da851;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-        }
-
-        .service-modal .btn-whatsapp-submit i { font-size: 20px; }
-
-        .service-modal .btn-cancel {
+        .btn-cancel {
             padding: 14px 24px;
             background: var(--light-gray);
-            color: var(--text-dark);
             border: 1.5px solid var(--border-color);
             border-radius: 60px;
             font-weight: 600;
             font-size: 14px;
-            font-family: inherit;
             cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .service-modal .btn-cancel:hover { background: #e0e0e0; }
-
-        /* ===== IMAGE LIGHTBOX ===== */
-        .image-lightbox-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(6px);
-            z-index: 100000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            cursor: zoom-out;
-        }
-
-        .image-lightbox-overlay.show { display: flex; opacity: 1; }
-
-        .lightbox-image-wrapper {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 95vw;
-            max-height: 92vh;
-            animation: lightboxZoomIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            pointer-events: auto;
-        }
-
-        .lightbox-image-wrapper img#lightboxImage {
-            max-width: 95vw;
-            max-height: 92vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
-            background: #fff;
-            padding: 12px;
-            user-select: none;
-            -webkit-user-drag: none;
-            pointer-events: auto !important;
-            display: block;
-        }
-
-        .lightbox-watermark-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-35deg);
-            width: 70%;
-            max-width: 530px;
-            height: auto;
-            max-height: 55%;
-            object-fit: contain;
-            opacity: 0.2;
-            padding: 0;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        @keyframes lightboxZoomIn {
-            from { transform: scale(0.85); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .lightbox-close-btn {
-            position: absolute;
-            top: 20px;
-            right: 24px;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.12);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
-            pointer-events: auto;
-        }
-
-        .lightbox-close-btn:hover {
-            background: #e74c3c;
-            border-color: #e74c3c;
-            transform: rotate(90deg) scale(1.1);
-        }
-
-        #mainProductImage {
-            pointer-events: auto !important;
-            cursor: zoom-in !important;
-        }
-
-        .product-detail-image { cursor: zoom-in; }
-        .product-detail-image .card-brand-logo { cursor: default; }
-
-        @media (max-width: 768px) {
-            .image-lightbox-overlay { padding: 12px; }
-            .lightbox-image-wrapper { max-width: 98vw; max-height: 88vh; }
-            .lightbox-image-wrapper img#lightboxImage { max-width: 98vw; max-height: 88vh; padding: 8px; }
-            .lightbox-watermark-logo { width: 70%; max-width: 350px; max-height: 50%; }
-            .lightbox-close-btn { top: 12px; right: 12px; width: 40px; height: 40px; font-size: 17px; }
-        }
-
-        @media (max-width: 480px) {
-            .lightbox-watermark-logo { width: 75%; max-width: 260px; max-height: 50%; }
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .header-left { flex-wrap: wrap; }
-            .search-bar { max-width: 100%; flex-basis: 100%; }
             .product-detail-grid { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
             .product-detail-image { min-height: 260px; }
             .related-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .ayah-top-bar { padding: 6px 12px; }
-            .ayah-top-bar .ayah-text { font-size: 11px; line-height: 1.6; }
-
-            .header-main { flex-direction: column; align-items: stretch; gap: 8px; padding: 8px 16px; }
-            .header-left { flex-direction: column; align-items: stretch; gap: 10px; }
+            .header-main { flex-direction: column; align-items: stretch; gap: 8px; }
+            .header-left { flex-direction: column; align-items: stretch; }
             .logo { justify-content: center; }
-            .logo img { height: 36px; }
-            .search-bar { max-width: 100%; }
-            .header-right { justify-content: center; }
-
             .nav-container { justify-content: center; padding: 0 8px; }
-            .nav-menu { justify-content: center; gap: 2px; }
             .nav-item { padding: 7px 9px; font-size: 10.5px; }
-
             .product-detail-grid { padding: 14px; gap: 16px; }
-            .product-detail-image { min-height: 200px; }
             .product-detail-info h1 { font-size: 20px; }
-            .product-detail-info .price .current { font-size: 22px; }
-
             .related-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-
-            .whatsapp-buy-btn { font-size: 14px; padding: 10px 22px; max-width: 100%; }
             .gallery-thumb { width: 60px; height: 60px; }
-
             .footer-content { grid-template-columns: 1fr; gap: 24px; }
             .footer-section { text-align: center; }
             .footer-section h3::after { left: 50%; transform: translateX(-50%); }
-            .contact-info { justify-content: center; }
-            .footer-social { justify-content: center; }
-
-            .sticky-right-stack { right: 14px; bottom: 14px; gap: 10px; }
-            .book-service-fab { padding: 11px 16px; font-size: 12px; }
-            .book-service-fab i { font-size: 15px; }
-
-            .service-modal { padding: 24px 20px 22px; }
-            .service-modal h2 { font-size: 18px; }
-
-            .rating-wrapper { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .rating-divider { display: none; }
         }
 
         @media (max-width: 480px) {
-            .ayah-top-bar { padding: 5px 10px; }
-            .ayah-top-bar .ayah-text { font-size: 10px; line-height: 1.5; }
-
             .nav-item { padding: 6px 7px; font-size: 9.5px; }
-
-            .product-detail-grid { padding: 10px; gap: 12px; }
             .product-detail-image { min-height: 160px; }
-            .product-detail-image img { max-height: 240px; padding: 10px; }
             .product-detail-info h1 { font-size: 17px; }
-            .product-detail-info .model-number { font-size: 10.5px; padding: 4px 12px; }
-            .product-detail-info .price .current { font-size: 18px; }
-
             .related-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .related-card .image { height: 100px; }
             .gallery-thumb { width: 52px; height: 52px; }
-
-            .header-action { font-size: 9px; }
-            .header-action i { font-size: 15px; }
-
-            .promo-bar { font-size: 11px; padding: 6px 12px; }
-
-            .service-modal .btn-whatsapp-submit { font-size: 13px; padding: 12px 18px; }
-
-            .rating-stars-display { font-size: 15px; }
-            .star-rating label { font-size: 18px; }
         }
     </style>
 </head>
@@ -1388,12 +978,9 @@
     <!-- ===== AYAH TOP BAR ===== -->
     <div class="ayah-top-bar">
         <div class="container">
-            <div style="font-family: 'Noto Kufi Arabic';" class="ayah-text">
-                وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ <span style="color:yellow">وَزِنُوا بِالْقِسْطَاسِ
-                    الْمُسْتَقِيمِ</span> ۚ ذَٰلِكَ خَيْرٌ وَأَحْسَنُ تَأْوِيلًا (٣٥) &emsp13;
-                "<span style="font-family: 'Noto Kufi Arabic';">اور جب ناپ کرو تو پورا ناپ کرو اور <span
-                        style="color:yellow"> بالکل صحیح ترازو سے وزن کرو</span> یہ بہتر ہے اور انجام کے اعتبار سے اچھا
-                    ہے۔</span>"
+            <div class="ayah-text">
+                وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ <span style="color:yellow">وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ</span> ۚ ذَٰلِكَ خَيْرٌ وَأَحْسَنُ تَأْوِيلًا (٣٥) &emsp13;
+                "<span>اور جب ناپ کرو تو پورا ناپ کرو اور <span style="color:yellow"> بالکل صحیح ترازو سے وزن کرو</span> یہ بہتر ہے اور انجام کے اعتبار سے اچھا ہے۔</span>"
             </div>
         </div>
     </div>
@@ -1411,7 +998,7 @@
                 </div>
             </div>
             <div class="header-right">
-                <a href="/privacy.html" class="header-action" style="font-size:10px; color:var(--text-light);">
+                <a href="/privacy.html" class="header-action">
                     <i class="fas fa-shield-alt"></i>
                     <span>Privacy</span>
                 </a>
@@ -1434,16 +1021,15 @@
 
     <!-- ===== PROMO BAR ===== -->
     <div class="promo-bar">
-        <div class="container">
-            <span class="orbitron" style="font-size: 18px; letter-spacing: 2px;">
-                <i><b>It's Beyond Just Weighing</b></i>
-            </span>
-        </div>
+        <span class="orbitron" style="font-size: 18px; letter-spacing: 2px;">
+            <b>It's Beyond Just Weighing</b>
+        </span>
     </div>
 
     <!-- ===== BREADCRUMB ===== -->
     <div class="breadcrumb">
-        <a href="/index.html">Home</a> &nbsp;/&nbsp; <a href="/products.html">Products</a> &nbsp;/&nbsp;
+        <a href="/index.html">Home</a> &nbsp;/&nbsp;
+        <a href="/products.html">Products</a> &nbsp;/&nbsp;
         <span>{{PRODUCT_NAME}}</span>
     </div>
 
@@ -1452,8 +1038,7 @@
         <div class="product-detail-grid animate-on-load">
             <div class="gallery-wrapper">
                 <div class="product-detail-image">
-                    <img id="mainProductImage" src="{{MAIN_IMAGE}}" alt="{{PRODUCT_NAME}}"
-                        onerror="this.src='/images/placeholder.png'">
+                    <img id="mainProductImage" src="{{MAIN_IMAGE}}" alt="{{PRODUCT_NAME}}">
                     <img class="card-brand-logo" src="/images/logo.png" alt="Weighspot" aria-hidden="true">
                     {{BADGE_HTML}}
                 </div>
@@ -1468,19 +1053,18 @@
                 {{VIDEO_HTML}}
                 <div class="description">{{DESCRIPTION_HTML}}</div>
                 <div class="action-buttons">
-                    <a href="https://wa.me/923214070098?text={{WHATSAPP_MESSAGE}}" target="_blank"
-                        class="whatsapp-buy-btn">
+                    <a href="https://wa.me/923214070098?text={{WHATSAPP_MESSAGE}}" target="_blank" class="whatsapp-buy-btn">
                         <i class="fab fa-whatsapp"></i> {{BUY_BUTTON_TEXT}}
                     </a>
-                    <button class="btn-outline" onclick="window.location.href='/products.html'">
+                    <a href="/products.html" class="btn-outline">
                         <i class="fas fa-arrow-left"></i> Back
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== RELATED PRODUCTS ===== -->
+    <!-- ===== RELATED ===== -->
     <section class="related-section">
         <h2>You May Also <span>Like</span></h2>
         <div class="related-grid">
@@ -1489,32 +1073,17 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <div class="footer-divider">
-        <div class="line"></div>
-    </div>
-
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About Weighspot</h3>
-                <p><strong>WeighSpot Scales Lahore</strong> is a specialized provider of precision weighing solutions
-                    with over 20 years of industry experience. We deliver a comprehensive range of digital and analogue
-                    weighing systems—including custom platform scales, lab scales, load cells, weighing indicators,
-                    controllers, health scales, and truck weighbridges. Backed by our in-house fabrication workshop, we
-                    design equipment tailored to your exact specifications and capacity requirements. Beyond products,
-                    we distinguish ourselves through integrated after-sales support: a dedicated repair laboratory and
-                    on-site servicing available via flexible maintenance contracts. WeighSpot Scales is your trusted
-                    partner for measurement accuracy and operational reliability.</p>
+                <p><strong>WeighSpot Scales Lahore</strong> is a specialized provider of precision weighing solutions with over 20 years of industry experience. Backed by our in-house fabrication workshop, we design equipment tailored to your exact specifications.</p>
                 <div class="footer-social">
-                    <a href="https://www.facebook.com/weightonscaleslahore" target="_blank"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/weighspot.scales.lhr" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@weighspotscaleslahore4245" target="_blank"><i
-                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/weightonscaleslahore" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/weighspot.scales.lhr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@weighspotscaleslahore4245" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a href="https://wa.me/923214070098" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.tiktok.com/@weighspotscaleslahore" target="_blank"><i
-                            class="fab fa-tiktok"></i></a>
+                    <a href="https://www.tiktok.com/@weighspotscaleslahore" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -1528,41 +1097,18 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
                 <h3>Contact Info</h3>
                 <div class="contact-info">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span><a href="https://maps.app.goo.gl/g44Z3Z8VAjXcHq249" target="_blank"
-                            style="color:inherit;">Shop #2, Prem Gali #4, Opp Islamia College Gate #2, Railway Road,
-                            Lahore</a></span>
+                    <span>Shop #2, Prem Gali #4, Opp Islamia College Gate #2, Railway Road, Lahore</span>
                 </div>
                 <div class="contact-info">
-                    <span class="dual-icons">
-                        <i class="fas fa-phone"></i>
-                        <i class="fab fa-whatsapp"></i>
-                    </span>
-                    <span><a href="https://wa.me/923214070098" target="_blank"
-                            style="color:inherit;">0321-4070098</a></span>
-                </div>
-                <div class="contact-info">
-                    <span class="dual-icons">
-                        <i class="fas fa-phone"></i>
-                        <i class="fab fa-whatsapp"></i>
-                    </span>
-                    <span><a href="https://wa.me/923412929295" target="_blank"
-                            style="color:inherit;">0341-2929295</a></span>
+                    <i class="fas fa-phone"></i>
+                    <span><a href="https://wa.me/923214070098" style="color:inherit;">0321-4070098</a></span>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-envelope"></i>
-                    <span><a href="mailto:weighspotscales@gmail.com"
-                            style="color:inherit;">weighspotscales@gmail.com</a></span>
+                    <span>weighspotscales@gmail.com</span>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-clock"></i>
@@ -1571,60 +1117,52 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; Copyright 2026 Weighspot Scales Lahore | All Rights Reserved | Designed with The Bridge Solutions
-            </p>
+            <p>&copy; Copyright 2026 Weighspot Scales Lahore | All Rights Reserved</p>
         </div>
     </footer>
 
-    <!-- ===== STICKY RIGHT STACK ===== -->
+    <!-- ===== STICKY STACK ===== -->
     <div class="sticky-right-stack">
-        <a href="https://wa.me/923214070098" target="_blank" class="whatsapp-fab" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp fab-whatsapp">
-                <p class="whatsapp-text">Contact Us</p>
-            </i>
+        <a href="https://wa.me/923214070098" target="_blank" class="fab-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <p class="whatsapp-text">Contact Us</p>
         </a>
-        <a href="https://g.page/r/CZSRkhaMgEGFEBE/review" target="_blank" class="review-fab"
-            aria-label="Give us a Review">
+        <a href="https://g.page/r/CZSRkhaMgEGFEBE/review" target="_blank" class="review-fab">
             <i class="fas fa-comment-dots"></i>
             <span>Give us a Review</span>
         </a>
-        <button class="book-service-fab" id="openServiceBtn" aria-label="Book a Home Service">
+        <button class="book-service-fab" id="openServiceBtn">
             <i class="fas fa-screwdriver-wrench"></i>
             <span>Book a Home Service</span>
         </button>
     </div>
 
-    <!-- ===== BOOK SERVICE MODAL ===== -->
+    <!-- ===== SERVICE MODAL ===== -->
     <div class="service-modal-overlay" id="serviceModalOverlay">
         <div class="service-modal">
-            <button class="modal-close" id="closeServiceBtn" aria-label="Close">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="modal-close" id="closeServiceBtn"><i class="fas fa-times"></i></button>
             <h2><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</h2>
             <p class="modal-subtitle">Fill in your details and we'll open WhatsApp with your pre-filled request.</p>
-
             <form id="homeServiceForm">
                 <div class="form-group">
-                    <label for="hsName">Full Name <span class="req">*</span></label>
+                    <label>Full Name *</label>
                     <input type="text" id="hsName" placeholder="e.g. Ahmed Khan" required>
                 </div>
                 <div class="form-group">
-                    <label for="hsCompany">Company Name <span class="req">*</span></label>
+                    <label>Company Name *</label>
                     <input type="text" id="hsCompany" placeholder="e.g. ABC Traders" required>
                 </div>
                 <div class="form-group">
-                    <label for="hsAddress">Address <span class="req">*</span></label>
+                    <label>Address *</label>
                     <input type="text" id="hsAddress" placeholder="House/Shop, Street, Area, City" required>
                 </div>
                 <div class="form-group">
-                    <label for="hsNumber">Contact Number <span class="req">*</span></label>
+                    <label>Contact Number *</label>
                     <input type="tel" id="hsNumber" placeholder="e.g. 0300-1234567" required>
                 </div>
                 <div class="form-group">
-                    <label for="hsDescription">Describe the Issue / Service Needed <span class="req">*</span></label>
-                    <textarea id="hsDescription"
-                        placeholder="e.g. My digital scale is showing error E02 and needs calibration."
-                        required></textarea>
+                    <label>Describe the Issue / Service Needed *</label>
+                    <textarea id="hsDescription" required></textarea>
                 </div>
                 <div class="modal-actions">
                     <button type="submit" class="btn-whatsapp-submit">
@@ -1636,11 +1174,9 @@
         </div>
     </div>
 
-    <!-- ===== IMAGE LIGHTBOX ===== -->
+    <!-- ===== LIGHTBOX ===== -->
     <div class="image-lightbox-overlay" id="imageLightbox">
-        <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close full view">
-            <i class="fas fa-times"></i>
-        </button>
+        <button class="lightbox-close-btn" id="lightboxCloseBtn"><i class="fas fa-times"></i></button>
         <div class="lightbox-image-wrapper">
             <img id="lightboxImage" src="" alt="Full view">
             <img class="lightbox-watermark-logo" src="/images/logo.png" alt="Weighspot" aria-hidden="true">
@@ -1652,9 +1188,9 @@
         const lightboxOverlay = document.getElementById('imageLightbox');
         const lightboxImage = document.getElementById('lightboxImage');
         const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+        const mainImg = document.getElementById('mainProductImage');
 
         function openLightbox(src) {
-            if (!src) return;
             lightboxImage.src = src;
             lightboxOverlay.classList.add('show');
             document.body.style.overflow = 'hidden';
@@ -1663,39 +1199,23 @@
         function closeLightbox() {
             lightboxOverlay.classList.remove('show');
             document.body.style.overflow = '';
-            setTimeout(() => { lightboxImage.src = ''; }, 300);
+        }
+
+        if (mainImg) {
+            mainImg.addEventListener('click', function () { openLightbox(this.src); });
         }
 
         lightboxCloseBtn.addEventListener('click', closeLightbox);
         lightboxOverlay.addEventListener('click', function (e) {
             if (e.target === lightboxOverlay) closeLightbox();
         });
+
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && lightboxOverlay.classList.contains('show')) {
-                closeLightbox();
-            }
+            if (e.key === 'Escape' && lightboxOverlay.classList.contains('show')) closeLightbox();
         });
 
-        // ===== MAIN IMAGE CLICK = FULL VIEW =====
-        const mainImg = document.getElementById('mainProductImage');
-        if (mainImg) {
-            mainImg.style.pointerEvents = 'auto';
-            mainImg.style.cursor = 'zoom-in';
-
-            mainImg.addEventListener('click', function (e) {
-                e.stopPropagation();
-                openLightbox(this.src);
-            });
-
-            mainImg.addEventListener('touchend', function (e) {
-                e.preventDefault();
-                openLightbox(this.src);
-            }, { passive: false });
-        }
-
-        // ===== GALLERY THUMBS =====
-        const thumbs = document.querySelectorAll('.gallery-thumb');
-        thumbs.forEach(thumb => {
+        // ===== THUMBNAIL SWITCHING =====
+        document.querySelectorAll('.gallery-thumb').forEach(thumb => {
             thumb.addEventListener('click', function () {
                 const newSrc = this.dataset.img;
                 if (mainImg) {
@@ -1705,12 +1225,91 @@
                         mainImg.style.opacity = '1';
                     }, 150);
                 }
-                thumbs.forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
             });
         });
 
-        // ===== BOOK SERVICE MODAL =====
+        // ===== RATING SYSTEM =====
+        document.querySelectorAll('#starRatingInput input').forEach(input => {
+            input.addEventListener('change', async function () {
+                const ratingValue = Number(this.value);
+                const messageEl = document.getElementById('ratingMessage');
+                const starsContainer = document.getElementById('starRatingInput');
+                const productId = '{{PRODUCT_ID}}';
+
+                if (!ratingValue) return;
+
+                const alreadyRated = localStorage.getItem('rated_' + productId) === 'true';
+                if (alreadyRated) {
+                    if (messageEl) {
+                        messageEl.className = 'rating-message error';
+                        messageEl.textContent = 'You have already rated this product.';
+                    }
+                    return;
+                }
+
+                if (messageEl) {
+                    messageEl.className = 'rating-message';
+                    messageEl.textContent = 'Submitting...';
+                }
+
+                try {
+                    const response = await fetch(
+                        'https://ukemuqyzflbqridefzox.supabase.co/functions/v1/submit-rating',
+                        {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ product_id: productId, rating: ratingValue })
+                        }
+                    );
+
+                    if (!response.ok) throw new Error('Failed');
+
+                    const result = await response.json();
+
+                    if (starsContainer) starsContainer.classList.add('disabled');
+                    document.querySelectorAll('#starRatingInput input').forEach(i => i.disabled = true);
+
+                    if (messageEl) {
+                        messageEl.className = 'rating-message success';
+                        messageEl.textContent = `Thank you! You rated ${ratingValue} star${ratingValue > 1 ? 's' : ''} ⭐`;
+                    }
+
+                    localStorage.setItem('rated_' + productId, 'true');
+
+                    const avgEl = document.getElementById('avgRatingNumber');
+                    const countEl = document.getElementById('reviewCountText');
+                    const starsEl = document.getElementById('avgStarsDisplay');
+                    const labelEl = document.getElementById('rateThisLabel');
+
+                    if (avgEl && result.newAverage) avgEl.textContent = Number(result.newAverage).toFixed(1);
+                    if (countEl && result.newCount) countEl.textContent = `(${result.newCount} review${result.newCount > 1 ? 's' : ''})`;
+                    if (labelEl) labelEl.textContent = 'You rated this product';
+
+                    if (starsEl && result.newAverage) {
+                        const avg = Number(result.newAverage);
+                        const rounded = Math.round(avg * 2) / 2;
+                        let html = '';
+                        for (let i = 1; i <= 5; i++) {
+                            if (rounded >= i) html += '<i class="fas fa-star"></i>';
+                            else if (rounded >= i - 0.5) html += '<i class="fas fa-star-half-alt"></i>';
+                            else html += '<i class="far fa-star"></i>';
+                        }
+                        starsEl.innerHTML = html;
+                    }
+
+                } catch (error) {
+                    console.error('Rating error:', error);
+                    if (messageEl) {
+                        messageEl.className = 'rating-message error';
+                        messageEl.textContent = 'Failed to submit rating. Please try again.';
+                    }
+                }
+            });
+        });
+
+        // ===== SERVICE MODAL =====
         const overlay = document.getElementById('serviceModalOverlay');
         const openBtn = document.getElementById('openServiceBtn');
         const closeBtn = document.getElementById('closeServiceBtn');
@@ -1720,52 +1319,45 @@
         function openModal() { overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
         function closeModal() { overlay.classList.remove('show'); document.body.style.overflow = ''; }
 
-        openBtn.addEventListener('click', openModal);
-        closeBtn.addEventListener('click', closeModal);
-        cancelBtn.addEventListener('click', closeModal);
-        overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+        if (openBtn) openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('hsName').value.trim();
-            const company = document.getElementById('hsCompany').value.trim();
-            const address = document.getElementById('hsAddress').value.trim();
-            const number = document.getElementById('hsNumber').value.trim();
-            const description = document.getElementById('hsDescription').value.trim();
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('hsName').value.trim();
+                const company = document.getElementById('hsCompany').value.trim();
+                const address = document.getElementById('hsAddress').value.trim();
+                const number = document.getElementById('hsNumber').value.trim();
+                const description = document.getElementById('hsDescription').value.trim();
 
-            if (!name || !company || !address || !number || !description) {
-                alert('Please fill all fields before submitting.');
-                return;
-            }
+                if (!name || !company || !address || !number || !description) {
+                    alert('Please fill all fields.');
+                    return;
+                }
 
-            const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to book a home service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
-            window.open(`https://wa.me/923214070098?text=${encodeURIComponent(message)}`, '_blank');
-            closeModal();
-            form.reset();
-        });
+                const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to book a home service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
+                window.open(`https://wa.me/923214070098?text=${encodeURIComponent(message)}`, '_blank');
+                closeModal();
+                form.reset();
+            });
+        }
 
         // ===== SEARCH =====
-        const searchInput = document.getElementById('searchInput');
-        window.searchProducts = function () {
-            const query = searchInput.value.trim();
-            if (query.length > 0) {
-                window.location.href = `/products.html?search=${encodeURIComponent(query)}`;
-            }
-        };
-        searchInput.addEventListener('keypress', function (e) {
+        function searchProducts() {
+            const q = document.getElementById('searchInput').value.trim();
+            if (q.length > 0) window.location.href = `/products.html?search=${encodeURIComponent(q)}`;
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') searchProducts();
         });
 
-        // ===== PROTECT IMAGES =====
-        document.addEventListener('contextmenu', function (e) {
-            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
-        });
-        document.addEventListener('dragstart', function (e) {
-            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); }
-        });
+        // ===== SECURITY =====
+        document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+        document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
     </script>
 
 </body>
