@@ -1532,7 +1532,7 @@
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="products.html" class="nav-item active">Products</a>
                 <a href="services.html" class="nav-item">Services</a>
-                <a href="home-service.html" class="nav-item">Book a Home Service</a>
+                <a href="home-service.html" class="nav-item">Register an On-site Repair Service</a>
                 <a href="contact.html" class="nav-item">Contact</a>
             </div>
         </div>
@@ -1627,7 +1627,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Our Products</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="home-service.html">Book a Home Service</a></li>
+                    <li><a href="home-service.html">Register an On-site Repair Service</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -1691,9 +1691,9 @@
             <i class="fas fa-comment-dots"></i>
             <span>Give us a Review</span>
         </a>
-        <button class="book-service-fab" id="openServiceBtn" aria-label="Book a Home Service">
+        <button class="book-service-fab" id="openServiceBtn" aria-label="Register an On-site Repair Service">
             <i class="fas fa-screwdriver-wrench"></i>
-            <span>Book a Home Service</span>
+            <span>Register an On-site Repair Service</span>
         </button>
     </div>
 
@@ -1703,7 +1703,7 @@
             <button class="modal-close" id="closeServiceBtn" aria-label="Close">
                 <i class="fas fa-times"></i>
             </button>
-            <h2><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</h2>
+            <h2><i class="fas fa-screwdriver-wrench"></i> Register an On-site Repair Service</h2>
             <p class="modal-subtitle">Fill in your details and we'll open WhatsApp with your pre-filled request.</p>
 
             <form id="homeServiceForm">
@@ -2072,7 +2072,7 @@
                 return;
             }
 
-            const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to book a home service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
+            const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to Register an On-site Repair Service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
             window.open(`https://wa.me/923214070098?text=${encodeURIComponent(message)}`, '_blank');
             closeModal();
             form.reset();
