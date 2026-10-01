@@ -1780,10 +1780,10 @@
             if (isPlatformExtraCategory(n)) return 3;
             if (/accessor|spare/.test(n)) return 4;
             if (/animal/.test(n)) return 5;
-            if (/printer/.test(n)) return 7;
+            if (/indicators?\s+with\s+printers?/.test(n)) return 7;
             if (/weigh\s*-?\s*bridge/.test(n)) return 8;
             if (/platform/.test(n)) return 3;
-            if (/indicator/.test(n)) return 6;
+            if (/^\s*weighing\s+indicators?\s*$/.test(n)) return 6;
             return 100;
         }
 
@@ -2156,4 +2156,4 @@
 
 </body>
 
-</html> 
+</html>
