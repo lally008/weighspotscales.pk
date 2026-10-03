@@ -23,40 +23,27 @@
     <meta property="og:type" content="website">
 
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebSite",
-            "@id": "https://weighspotscales.pk/#website",
-            "url": "https://weighspotscales.pk/",
-            "name": "Weighspotscales.pk",
-            "alternateName": ["Weighspot Scales", "Weighspotscales"],
-            "publisher": {
-                "@id": "https://weighspotscales.pk/#organization"
-            }
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Weighspotscales.pk",
+        "alternateName": ["Weighspot Scales", "Weighspotscales"],
+        "@type": "Organization",
+        "@id": "https://weighspotscales.pk/#organization",
+        "url": "https://weighspotscales.pk/",
+        "logo": "https://weighspotscales.pk/images/logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lahore",
+            "addressCountry": "PK"
         },
-        {
-            "@type": "Organization",
-            "@id": "https://weighspotscales.pk/#organization",
-            "name": "Weighspotscales.pk",
-            "alternateName": ["Weighspot Scales", "Weighspotscales"],
-            "url": "https://weighspotscales.pk/",
-            "logo": "https://weighspotscales.pk/images/logo.png",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Lahore",
-                "addressCountry": "PK"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+92-321-4070098",
-                "contactType": "sales"
-            }
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+92-321-4070098",
+            "contactType": "sales"
         }
-    ]
-}
-</script>
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1757,7 +1744,6 @@
                 height: 60px;
             }
         }
-        
     </style>
 </head>
 
@@ -1797,7 +1783,7 @@
                 <a href="index.html" class="nav-item active">Home</a>
                 <a href="products.html" class="nav-item">Products</a>
                 <a href="services.html" class="nav-item">Services</a>
-                <a href="home-service.html" class="nav-item">Register an On-site Repair Service</a>
+                <a href="home-service.html" class="nav-item">Book a Home Service</a>
                 <a href="contact.html" class="nav-item">Contact</a>
 
                 <a href="privacy.html" class="nav-privacy" title="Privacy Policy">
@@ -1821,6 +1807,14 @@
     <section class="hero-slider-section">
         <div class="slider-container">
             <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-slide">
+                    <img src="images/b1.webp" alt="Weighing Solutions">
+                    <div class="slide-overlay">
+                        <h2>Precision <span>Weighing</span> Solutions</h2>
+                        <p>20 years of excellence in weighing industry</p>
+                        <a href="products.html" class="btn-slide">Explore Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
                 <div class="slider-slide">
                     <img src="images/b2.webp" alt="Platform Scales">
                     <div class="slide-overlay">
@@ -1849,14 +1843,6 @@
                     <img src="images/b5.webp" alt="Filling Machines">
                     <div class="slide-overlay">
                         <h2>Filling <span>Machines &</span> Batching System</h2>
-                        <p>20 years of excellence in weighing industry</p>
-                        <a href="products.html" class="btn-slide">Explore Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="slider-slide">
-                    <img src="images/b1.webp" alt="Weighing Solutions">
-                    <div class="slide-overlay">
-                        <h2>Precision <span>Weighing</span> Solutions</h2>
                         <p>20 years of excellence in weighing industry</p>
                         <a href="products.html" class="btn-slide">Explore Now <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1997,7 +1983,7 @@
                 <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="home-service.html">Register an On-site Repair Service</a></li>
+                    <li><a href="home-service.html">Book a Home Service</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -2053,9 +2039,9 @@
             <i class="fas fa-comment-dots"></i>
             <span>Give us a Review</span>
         </a>
-        <button class="book-service-fab" id="openServiceBtn" aria-label="Register an On-site Repair Service">
+        <button class="book-service-fab" id="openServiceBtn" aria-label="Book a Home Service">
             <i class="fas fa-screwdriver-wrench"></i>
-            <span>Register an On-site Repair Service</span>
+            <span>Book a Home Service</span>
         </button>
     </div>
 
@@ -2065,7 +2051,7 @@
             <button class="modal-close" id="closeServiceBtn" aria-label="Close">
                 <i class="fas fa-times"></i>
             </button>
-            <h2><i class="fas fa-screwdriver-wrench"></i> Register an On-site Repair Service</h2>
+            <h2><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</h2>
             <p class="modal-subtitle">Fill in your details and we'll open WhatsApp with your pre-filled request.</p>
 
             <form id="homeServiceForm">
@@ -2152,7 +2138,7 @@
                     alert('Please fill all fields before submitting.');
                     return;
                 }
-                const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to Register an On-site Repair Service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
+                const message = `Hey Weighspot Scales Team! I, ${name} from ${company} have a complain about our product and want to book a home service, My address is ${address} and Number is ${number}. Kindly contact us as soon as possible to resolve this matter. ${description}`;
                 window.open(`https://wa.me/923214070098?text=${encodeURIComponent(message)}`, '_blank');
                 closeModal();
                 form.reset();
@@ -2470,6 +2456,7 @@
         init();
     </script>
 
+    <script src="/search-suggest.js"></script>
 </body>
 
 </html>
