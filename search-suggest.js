@@ -12,15 +12,20 @@
     /* ---------- CSS ---------- */
     var css = '\
     .search-bar.ws-suggest-host, .nav-search-bar.ws-suggest-host { position: relative; }\
-    .search-bar.ws-suggest-host i.fa-search, .nav-search-bar.ws-suggest-host i.fa-search {\
+    .search-bar.ws-suggest-host > i.fa-search, .nav-search-bar.ws-suggest-host > i.fa-search {\
         width: 32px; height: 32px; padding: 0; display: flex; align-items: center; justify-content: center;\
         border-radius: 50%; right: 5px; font-size: 13px; box-shadow: 0 2px 6px rgba(4,76,161,0.3);\
         transition: all 0.3s ease;\
     }\
-    .search-bar.ws-suggest-host i.fa-search:hover, .nav-search-bar.ws-suggest-host i.fa-search:hover {\
+    .search-bar.ws-suggest-host > i.fa-search:hover, .nav-search-bar.ws-suggest-host > i.fa-search:hover {\
         transform: translateY(-50%) scale(1.08); box-shadow: 0 4px 12px rgba(4,76,161,0.4);\
     }\
     .search-bar.ws-suggest-host input, .nav-search-bar.ws-suggest-host input { padding-right: 46px; }\
+    .search-bar .ws-suggest-box i, .nav-search-bar .ws-suggest-box i {\
+        position: static; transform: none; background: none; padding: 0; border-radius: 0; width: auto; height: auto;\
+        box-shadow: none; display: inline-block; right: auto; top: auto; cursor: inherit; color: #044ca1;\
+    }\
+    .search-bar .ws-suggest-box .ws-suggest-empty i, .nav-search-bar .ws-suggest-box .ws-suggest-empty i { color: #666; margin-right: 6px; }\
     .ws-suggest-box {\
         position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #fff;\
         border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.18);\
