@@ -150,7 +150,17 @@
             animation: fadeInUp 0.7s ease forwards;
         }
 
-      
+        /* ===== SCROLL PROGRESS ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-blue), #3394e4);
+            z-index: 100001;
+            transition: width 0.1s linear;
+        }
 
         /* ===== AYAH TOP BAR ===== */
         .ayah-top-bar {
@@ -2039,7 +2049,7 @@
 
 <body>
 
-  
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ===== SWIPE SIDE DRAWER ===== -->
     <div class="drawer-overlay" id="drawerOverlay"></div>
