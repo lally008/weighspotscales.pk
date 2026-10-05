@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#044ca1">
     <title>Keli SQB Share Beam Load Cells 2 Ton - Weighspot Scales Lahore</title>
 
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -15,7 +16,6 @@
 ​Capacity: 2 Tons 2T
 ​Form Factor: Single-ended shear b">
     <meta name="robots" content="noindex, follow">
-
 
     <!-- Open Graph -->
     <meta property="og:title" content="Keli SQB Share Beam Load Cells 2 Ton">
@@ -100,6 +100,10 @@
             overflow-x: hidden;
         }
 
+        body.no-scroll {
+            overflow: hidden;
+        }
+
         a {
             text-decoration: none;
             color: inherit;
@@ -113,6 +117,15 @@
             -webkit-user-select: none;
             user-select: none;
             pointer-events: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(4, 76, 161, 0.45);
+            outline-offset: 2px;
         }
 
         .container {
@@ -149,6 +162,8 @@
             animation: fadeInUp 0.7s ease forwards;
         }
 
+      
+
         /* ===== AYAH TOP BAR ===== */
         .ayah-top-bar {
             background: var(--primary-dark);
@@ -176,6 +191,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
         }
 
         .header-main {
@@ -194,6 +214,21 @@
             align-items: center;
             gap: 16px;
             flex: 1;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            border: 1.5px solid var(--border-color);
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            font-size: 18px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         .logo {
@@ -223,6 +258,11 @@
             font-size: 13px;
             background: var(--light-gray);
             outline: none;
+        }
+
+        .search-bar input:focus {
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(4, 76, 161, 0.1);
         }
 
         .search-bar i {
@@ -288,10 +328,144 @@
             font-size: 13px;
             font-weight: 600;
             border-radius: var(--radius);
+            transition: background 0.25s ease;
         }
 
         .nav-item:hover {
             background: rgba(255, 255, 255, 0.18);
+        }
+
+        /* ===== SIDE DRAWER (swipe menu) ===== */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 100002;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .drawer-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 300px;
+            max-width: 86vw;
+            background: var(--white);
+            z-index: 100003;
+            transform: translateX(-102%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 8px 0 32px rgba(0, 0, 0, 0.2);
+            touch-action: pan-y;
+        }
+
+        .side-drawer.open {
+            transform: translateX(0);
+        }
+
+        .side-drawer.dragging {
+            transition: none;
+        }
+
+        .drawer-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+        }
+
+        .drawer-head img {
+            height: 36px;
+            width: auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 3px 8px;
+        }
+
+        .drawer-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .drawer-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 14px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .drawer-link i {
+            width: 22px;
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 16px;
+        }
+
+        .drawer-link:hover,
+        .drawer-link:active {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+        }
+
+        .drawer-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 10px 6px;
+        }
+
+        .drawer-foot {
+            padding: 14px 16px 18px;
+            border-top: 1px solid var(--border-color);
+            background: var(--light-gray);
+        }
+
+        .drawer-foot .drawer-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 60px;
+            margin-bottom: 10px;
+        }
+
+        .drawer-foot p {
+            font-size: 11px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.6;
         }
 
         /* ===== PROMO BAR ===== */
@@ -317,6 +491,13 @@
             margin: 0 auto;
             font-size: 12px;
             color: var(--text-light);
+            white-space: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .breadcrumb::-webkit-scrollbar {
+            display: none;
         }
 
         .breadcrumb a {
@@ -350,6 +531,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            min-width: 0;
         }
 
         .product-detail-image {
@@ -362,6 +544,7 @@
             justify-content: center;
             min-height: 450px;
             cursor: zoom-in;
+            touch-action: pan-y;
         }
 
         .product-detail-image img {
@@ -383,12 +566,19 @@
             padding: 3px 14px;
             border-radius: 20px;
             text-transform: uppercase;
-            z-index: 2;
+            z-index: 12;
         }
 
         .product-detail-image #mainProductImage {
             pointer-events: auto !important;
             cursor: zoom-in !important;
+            transition: opacity 0.18s ease, transform 0.25s ease;
+            will-change: transform;
+        }
+
+        .product-detail-image.is-zooming #mainProductImage {
+            transform: scale(1.6);
+            transition: transform 0.15s ease-out;
         }
 
         .product-detail-image .card-brand-logo {
@@ -403,6 +593,96 @@
             opacity: 0.2;
             pointer-events: none;
             z-index: 10;
+        }
+
+        /* gallery controls */
+        .gal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--primary-blue);
+            font-size: 15px;
+            cursor: pointer;
+            z-index: 12;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+
+        .product-detail-image:hover .gal-nav {
+            opacity: 1;
+        }
+
+        .gal-nav:hover {
+            background: var(--primary-blue);
+            color: #fff;
+        }
+
+        .gal-prev {
+            left: 12px;
+        }
+
+        .gal-next {
+            right: 12px;
+        }
+
+        .gal-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 20px;
+            z-index: 12;
+        }
+
+        .gal-hint {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--primary-blue);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            z-index: 12;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .gal-dots {
+            display: none;
+            justify-content: center;
+            gap: 6px;
+            margin-top: -2px;
+        }
+
+        .gal-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #cfd6e2;
+            transition: all 0.3s ease;
+        }
+
+        .gal-dots span.active {
+            width: 20px;
+            border-radius: 6px;
+            background: var(--primary-blue);
         }
 
         .gallery-thumbs {
@@ -424,10 +704,12 @@
             justify-content: center;
             padding: 4px;
             pointer-events: auto;
+            transition: border-color 0.25s ease, transform 0.25s ease;
         }
 
         .gallery-thumb:hover {
             border-color: var(--primary-blue);
+            transform: translateY(-2px);
         }
 
         .gallery-thumb.active {
@@ -445,6 +727,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            min-width: 0;
         }
 
         .product-detail-info .category {
@@ -553,6 +836,7 @@
             color: #ddd;
             cursor: pointer;
             padding: 0 1px;
+            transition: transform 0.2s ease, color 0.2s ease;
         }
 
         .star-rating label:hover,
@@ -640,6 +924,45 @@
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.8;
+            position: relative;
+        }
+
+        .product-detail-info .description.clamped {
+            max-height: 170px;
+            overflow: hidden;
+        }
+
+        .product-detail-info .description.clamped::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 70px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+            pointer-events: none;
+        }
+
+        .read-more-btn {
+            align-self: flex-start;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 2px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .read-more-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .read-more-btn.open i {
+            transform: rotate(180deg);
         }
 
         .product-detail-info .description strong {
@@ -743,10 +1066,12 @@
             width: 100%;
             max-width: 300px;
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .whatsapp-buy-btn:hover {
             transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
         }
 
         .whatsapp-buy-btn i {
@@ -773,10 +1098,40 @@
             color: var(--text-dark);
             background: transparent;
             cursor: pointer;
+            transition: all 0.25s ease;
         }
 
         .btn-outline:hover {
             border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 4px;
+            padding: 10px 6px;
+            background: var(--primary-light);
+            border: 1px solid rgba(4, 76, 161, 0.12);
+            border-radius: var(--radius);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .trust-item i {
+            font-size: 18px;
             color: var(--primary-blue);
         }
 
@@ -791,10 +1146,23 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
         }
 
         .related-section h2 span {
             color: var(--primary-blue);
+        }
+
+        .swipe-hint {
+            display: none;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-light);
+            align-items: center;
+            gap: 6px;
         }
 
         .related-grid {
@@ -950,6 +1318,7 @@
             border-radius: 50%;
             color: var(--white);
             font-size: 14px;
+            transition: background 0.25s ease;
         }
 
         .footer-social a:hover {
@@ -978,6 +1347,7 @@
             justify-content: center;
             padding: 30px;
             cursor: zoom-out;
+            touch-action: pan-y;
         }
 
         .image-lightbox-overlay.show {
@@ -999,6 +1369,7 @@
             background: #fff;
             padding: 12px;
             pointer-events: auto !important;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .lightbox-watermark-logo {
@@ -1029,11 +1400,56 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 3;
         }
 
         .lightbox-close-btn:hover {
             background: #e74c3c;
             border-color: #e74c3c;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 4px 16px;
+            border-radius: 20px;
         }
 
         /* ===== STICKY STACK ===== */
@@ -1046,6 +1462,7 @@
             flex-direction: column;
             align-items: flex-end;
             gap: 14px;
+            transition: bottom 0.3s ease;
         }
 
         .book-service-fab {
@@ -1093,6 +1510,126 @@
         .whatsapp-text {
             font-weight: 700;
             font-size: 14px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            left: 20px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary-blue);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 998;
+            box-shadow: 0 6px 20px rgba(4, 76, 161, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== MOBILE STICKY BUY BAR ===== */
+        .mobile-buybar {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 997;
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+            padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transform: translateY(110%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-buybar.show {
+            transform: translateY(0);
+        }
+
+        .mobile-buybar .mb-price {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            min-width: 0;
+        }
+
+        .mobile-buybar .mb-price small {
+            font-size: 10px;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-buybar .mb-price strong {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-buybar .mb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 20px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        .mobile-buybar .mb-btn i {
+            font-size: 18px;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 90px;
+            transform: translate(-50%, 20px);
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 100005;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translate(-50%, 0);
         }
 
         /* ===== SERVICE MODAL ===== */
@@ -1167,6 +1704,13 @@
             font-size: 14px;
             font-family: inherit;
             outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(4, 76, 161, 0.1);
         }
 
         .form-group textarea {
@@ -1225,29 +1769,39 @@
         }
 
         @media (max-width: 768px) {
+
+            /* header + drawer */
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
             .header-main {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
+                padding: 8px 14px;
             }
 
             .header-left {
-                flex-direction: column;
-                align-items: stretch;
+                flex-wrap: wrap;
+                gap: 10px;
             }
 
             .logo {
+                flex: 1;
                 justify-content: center;
+                margin-right: 40px;
             }
 
-            .nav-container {
-                justify-content: center;
-                padding: 0 8px;
+            .search-bar {
+                order: 3;
+                flex: 1 1 100%;
+                max-width: none;
             }
 
-            .nav-item {
-                padding: 7px 9px;
-                font-size: 10.5px;
+            .header-right {
+                display: none;
             }
 
             .product-detail-grid {
@@ -1259,14 +1813,81 @@
                 font-size: 20px;
             }
 
-            .related-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
+            /* gallery */
+            .gal-nav {
+                opacity: 1;
+                width: 34px;
+                height: 34px;
+                font-size: 13px;
+            }
+
+            .gal-hint {
+                display: none;
+            }
+
+            .gal-dots.multi {
+                display: flex;
+            }
+
+            .gallery-thumbs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x proximity;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding-bottom: 2px;
+            }
+
+            .gallery-thumbs::-webkit-scrollbar {
+                display: none;
             }
 
             .gallery-thumb {
                 width: 60px;
                 height: 60px;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+            }
+
+            /* trust */
+            .trust-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .whatsapp-buy-btn {
+                max-width: none;
+                flex: 1 1 100%;
+            }
+
+            /* related = swipe carousel */
+            .swipe-hint {
+                display: inline-flex;
+            }
+
+            .related-grid {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-columns: none;
+                grid-auto-columns: 62%;
+                gap: 12px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: 4px 2px 12px;
+                margin: 0 -2px;
+            }
+
+            .related-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .related-card {
+                scroll-snap-align: start;
+            }
+
+            .related-card .image {
+                height: 180px;
             }
 
             .footer-content {
@@ -1282,160 +1903,125 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-        }
 
-        @media (max-width: 480px) {
-            .nav-item {
-                padding: 6px 7px;
-                font-size: 9.5px;
+            .footer-social,
+            .contact-info {
+                justify-content: center;
             }
 
-            .product-detail-image {
-                min-height: 160px;
+            /* buy bar */
+            .mobile-buybar {
+                display: flex;
             }
 
-            .product-detail-info h1 {
-                font-size: 17px;
+            body.has-buybar .sticky-right-stack {
+                bottom: 78px;
             }
 
-            .related-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
+            body.has-buybar .back-to-top {
+                bottom: 78px;
             }
 
-            .related-card .image {
-                height: 100px;
+            footer {
+                padding-bottom: 80px;
             }
 
-            .gallery-thumb {
-                width: 52px;
-                height: 52px;
+            .back-to-top {
+                left: 10px;
+                bottom: 8px;
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
             }
-        }
 
-        /* ===== STICKY RIGHT STACK - MOBILE RESPONSIVE (CHOTA) ===== */
-        @media (max-width: 768px) {
+            .lightbox-nav {
+                display: none;
+            }
+
+            .image-lightbox-overlay {
+                padding: 14px;
+            }
+
+            /* sticky stack */
             .sticky-right-stack {
                 right: 8px;
                 bottom: 8px;
                 gap: 6px;
             }
 
-            /* WhatsApp FAB */
-            .whatsapp-fab {
-                width: 115px !important;
+            .fab-whatsapp {
                 height: 38px !important;
                 border-radius: 19px !important;
-                font-size: 18px !important;
-                padding: 0 10px !important;
-                gap: 5px !important;
-            }
-
-            .whatsapp-fab i {
                 font-size: 16px !important;
+                padding: 0 12px !important;
+                gap: 5px !important;
             }
 
             .whatsapp-text {
                 font-size: 10px !important;
-                font-weight: 700 !important;
+                margin: 0;
             }
 
-            /* Review FAB */
-            .review-fab {
-                padding: 8px 12px !important;
-                font-size: 10px !important;
-                border-radius: 30px !important;
-                gap: 5px !important;
-                box-shadow: 0 3px 12px rgba(51, 148, 228, 0.3) !important;
-            }
-
-            .review-fab i {
-                font-size: 12px !important;
-            }
-
-            /* Book Service FAB */
+            .review-fab,
             .book-service-fab {
                 padding: 8px 12px !important;
                 font-size: 10px !important;
                 border-radius: 30px !important;
                 gap: 5px !important;
-                box-shadow: 0 3px 12px rgba(230, 126, 34, 0.3) !important;
             }
 
+            .review-fab i,
             .book-service-fab i {
                 font-size: 12px !important;
             }
         }
 
-        /* ===== EXTRA SMALL MOBILE (480px) ===== */
         @media (max-width: 480px) {
-            .sticky-right-stack {
-                right: 6px;
-                bottom: 6px;
-                gap: 5px;
+            .product-detail-image {
+                min-height: 220px;
             }
 
-            /* WhatsApp FAB */
-            .whatsapp-fab {
-                width: 100px !important;
+            .product-detail-info h1 {
+                font-size: 18px;
+            }
+
+            .related-grid {
+                grid-auto-columns: 70%;
+            }
+
+            .related-card .image {
+                height: 150px;
+            }
+
+            .gallery-thumb {
+                width: 52px;
+                height: 52px;
+            }
+
+            .trust-item {
+                font-size: 10px;
+            }
+
+            .fab-whatsapp {
                 height: 34px !important;
-                border-radius: 17px !important;
-                font-size: 16px !important;
-                padding: 0 8px !important;
-                gap: 4px !important;
-            }
-
-            .whatsapp-fab i {
                 font-size: 14px !important;
+                padding: 0 10px !important;
             }
 
             .whatsapp-text {
                 font-size: 9px !important;
             }
 
-            /* Review FAB */
-            .review-fab {
-                padding: 7px 10px !important;
-                font-size: 9px !important;
-                border-radius: 25px !important;
-                gap: 4px !important;
-            }
-
-            .review-fab i {
-                font-size: 10px !important;
-            }
-
-            /* Book Service FAB */
+            .review-fab,
             .book-service-fab {
                 padding: 7px 10px !important;
                 font-size: 9px !important;
-                border-radius: 25px !important;
-                gap: 4px !important;
-            }
-
-            .book-service-fab i {
-                font-size: 10px !important;
             }
         }
 
-        /* ===== VERY SMALL MOBILE (380px) ===== */
         @media (max-width: 380px) {
-            .sticky-right-stack {
-                right: 5px;
-                bottom: 5px;
-                gap: 4px;
-            }
-
-            .whatsapp-fab {
-                width: 90px !important;
+            .fab-whatsapp {
                 height: 30px !important;
-                border-radius: 15px !important;
-                font-size: 14px !important;
-                padding: 0 6px !important;
-                gap: 3px !important;
-            }
-
-            .whatsapp-fab i {
                 font-size: 12px !important;
             }
 
@@ -1443,32 +2029,54 @@
                 font-size: 8px !important;
             }
 
-            .review-fab {
-                padding: 6px 8px !important;
-                font-size: 8px !important;
-                border-radius: 20px !important;
-                gap: 3px !important;
-            }
-
-            .review-fab i {
-                font-size: 9px !important;
-            }
-
+            .review-fab,
             .book-service-fab {
                 padding: 6px 8px !important;
                 font-size: 8px !important;
-                border-radius: 20px !important;
-                gap: 3px !important;
             }
+        }
 
-            .book-service-fab i {
-                font-size: 9px !important;
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 
 <body>
+
+  
+
+    <!-- ===== SWIPE SIDE DRAWER ===== -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer" aria-hidden="true" aria-label="Menu">
+        <div class="drawer-head">
+            <img src="/images/logo.png" alt="Weighspot Scales">
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body">
+            <a href="/index.html" class="drawer-link"><i class="fas fa-house"></i> Home</a>
+            <a href="/products.html" class="drawer-link"><i class="fas fa-scale-balanced"></i> Products</a>
+            <a href="/services.html" class="drawer-link"><i class="fas fa-gears"></i> Services</a>
+            <a href="/home-service.html" class="drawer-link"><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</a>
+            <a href="/contact.html" class="drawer-link"><i class="fas fa-phone-volume"></i> Contact</a>
+            <div class="drawer-divider"></div>
+            <a href="/privacy.html" class="drawer-link"><i class="fas fa-shield-alt"></i> Privacy</a>
+            <a href="https://g.page/r/CZSRkhaMgEGFEBE/review" target="_blank" class="drawer-link"><i
+                    class="fas fa-star"></i> Give us a Review</a>
+        </div>
+        <div class="drawer-foot">
+            <a href="https://wa.me/923214070098" target="_blank" class="drawer-wa"><i class="fab fa-whatsapp"></i> Chat
+                on WhatsApp</a>
+            <p>Mon-Sat: 11:00 AM - 7:00 PM<br>Railway Road, Lahore</p>
+        </div>
+    </aside>
 
     <!-- ===== AYAH TOP BAR ===== -->
     <div class="ayah-top-bar">
@@ -1483,14 +2091,18 @@
     </div>
 
     <!-- ===== HEADER ===== -->
-    <header>
+    <header id="siteHeader">
         <div class="header-main">
             <div class="header-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-controls="sideDrawer">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <a href="/index.html" class="logo">
                     <img src="/images/logo.png" alt="Weighspot Scales">
                 </a>
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search scales, weights, parts...">
+                    <input type="text" id="searchInput" placeholder="Search scales, weights, parts..."
+                        aria-label="Search products">
                     <i class="fas fa-search" onclick="searchProducts()"></i>
                 </div>
             </div>
@@ -1534,11 +2146,18 @@
     <section class="product-detail-section">
         <div class="product-detail-grid animate-on-load">
             <div class="gallery-wrapper">
-                <div class="product-detail-image">
+                <div class="product-detail-image" id="galleryStage">
                     <img id="mainProductImage" src="https://blue-paper-cf9a.weighspotscaleslahore.workers.dev/image/supabase-images/1789588943920_b5batc_301181.jpg" alt="Keli SQB Share Beam Load Cells 2 Ton">
                     <img class="card-brand-logo" src="/images/logo.png" alt="Weighspot" aria-hidden="true">
                     <span style="position:absolute; top:12px; left:12px; background:#8e44ad; color:#fff; font-size:11px; font-weight:700; padding:3px 14px; border-radius:20px; text-transform:uppercase;">Industrial Standard</span>
+                    <button class="gal-nav gal-prev" id="galPrev" aria-label="Previous image" hidden><i
+                            class="fas fa-chevron-left"></i></button>
+                    <button class="gal-nav gal-next" id="galNext" aria-label="Next image" hidden><i
+                            class="fas fa-chevron-right"></i></button>
+                    <span class="gal-counter" id="galCounter" hidden>1 / 1</span>
+                    <span class="gal-hint" id="galHint"><i class="fas fa-magnifying-glass-plus"></i> Click to zoom</span>
                 </div>
+                <div class="gal-dots" id="galDots"></div>
                 <div class="gallery-thumbs"><div class="gallery-thumb active" data-img="https://blue-paper-cf9a.weighspotscaleslahore.workers.dev/image/supabase-images/1789588943920_b5batc_301181.jpg">
       <img src="https://blue-paper-cf9a.weighspotscaleslahore.workers.dev/image/supabase-images/1789588943920_b5batc_301181.jpg" alt="Thumbnail 1">
     </div><div class="gallery-thumb" data-img="https://blue-paper-cf9a.weighspotscaleslahore.workers.dev/image/supabase-images/1789589503264_s1li3o_301180.jpg">
@@ -1552,15 +2171,28 @@
                 
                 <div style="padding:12px 0; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;"><span style="font-size:24px; font-weight:800; color:#f39c12;">💰 Ask for Price</span></div>
                 
-                <div class="description">Specifications &amp; Details<br>​Manufacturer: Keli Sensing Technology (Ningbo) Co., Ltd.<br>​Model / Type: SQB<br>​Capacity: 2 Tons (2T)<br>​Form Factor: Single-ended shear beam load cell with blind hole / threaded loading eye and integrated wire strain relief.<br>​Standard Wiring Color Code (Keli SQB 4-Wire)<br>​Red: Excitation + (E+)<br>​Black: Excitation - (E-)<br>​Green: Signal + (S+)<br>​White: Signal - (S-)<br>​Bare / Braided: Shield Ground</div>
+                <div class="description" id="productDescription">Specifications &amp; Details<br>​Manufacturer: Keli Sensing Technology (Ningbo) Co., Ltd.<br>​Model / Type: SQB<br>​Capacity: 2 Tons (2T)<br>​Form Factor: Single-ended shear beam load cell with blind hole / threaded loading eye and integrated wire strain relief.<br>​Standard Wiring Color Code (Keli SQB 4-Wire)<br>​Red: Excitation + (E+)<br>​Black: Excitation - (E-)<br>​Green: Signal + (S+)<br>​White: Signal - (S-)<br>​Bare / Braided: Shield Ground</div>
+                <button class="read-more-btn" id="readMoreBtn" hidden>
+                    <span>Read more</span> <i class="fas fa-chevron-down"></i>
+                </button>
                 <div class="action-buttons">
                     <a href="https://wa.me/923214070098?text=Hi%20Weighspot%2C%20I'm%20interested%20in%20knowing%20the%20price%20of%20%22Keli%20SQB%20Share%20Beam%20Load%20Cells%202%20Ton%22.%20Please%20guide%20me." target="_blank"
-                        class="whatsapp-buy-btn">
+                        class="whatsapp-buy-btn" id="mainBuyBtn">
                         <i class="fab fa-whatsapp"></i> Ask for Price
                     </a>
+                    <button type="button" class="btn-outline" id="shareBtn">
+                        <i class="fas fa-share-nodes"></i> Share
+                    </button>
                     <a href="/products.html" class="btn-outline">
                         <i class="fas fa-arrow-left"></i> Back
                     </a>
+                </div>
+
+                <div class="trust-strip">
+                    <div class="trust-item"><i class="fas fa-certificate"></i> Genuine Products</div>
+                    <div class="trust-item"><i class="fas fa-screwdriver-wrench"></i> Home Service</div>
+                    <div class="trust-item"><i class="fas fa-industry"></i> In-house Workshop</div>
+                    <div class="trust-item"><i class="fas fa-award"></i> 20+ Years Experience</div>
                 </div>
             </div>
         </div>
@@ -1568,8 +2200,12 @@
 
     <!-- ===== RELATED ===== -->
     <section class="related-section">
-        <h2>You May Also <span>Like</span></h2>
-        <div class="related-grid">
+        <h2>
+            <div>You May Also <span>Like</span></div>
+            <span class="swipe-hint"><i class="fas fa-hand-pointer"></i> Swipe <i
+                    class="fas fa-arrow-right-long"></i></span>
+        </h2>
+        <div class="related-grid" id="relatedGrid">
             <a href="/products/mt1241-mettler-toledo-single-point-load-cell-mt1241-mettler-toledo-50kg-100kg-200kg-300kg.html" class="related-card">
     <div class="image"><img src="https://blue-paper-cf9a.weighspotscaleslahore.workers.dev/image/products/1790285555593_uqdc8vug.jpg" alt="MT1241 METTLER TOLEDO Single Point Load Cell" onerror="this.src='/images/placeholder.png'"></div>
     <div class="info"><h4>MT1241 METTLER TOLEDO Single Point Load Cell</h4><div class="price">💰 Ask for Price</div></div>
@@ -1587,7 +2223,7 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer>
+    <footer id="siteFooter">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About Weighspot</h3>
@@ -1595,14 +2231,15 @@
                     with over 20 years of industry experience. Backed by our in-house fabrication workshop, we design
                     equipment tailored to your exact specifications.</p>
                 <div class="footer-social">
-                    <a href="https://www.facebook.com/weightonscaleslahore" target="_blank"><i
+                    <a href="https://www.facebook.com/weightonscaleslahore" target="_blank" aria-label="Facebook"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/weighspot.scales.lhr" target="_blank"><i
+                    <a href="https://www.instagram.com/weighspot.scales.lhr" target="_blank" aria-label="Instagram"><i
                             class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@weighspotscaleslahore4245" target="_blank"><i
+                    <a href="https://youtube.com/@weighspotscaleslahore4245" target="_blank" aria-label="YouTube"><i
                             class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/923214070098" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.tiktok.com/@weighspotscaleslahore" target="_blank"><i
+                    <a href="https://wa.me/923214070098" target="_blank" aria-label="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@weighspotscaleslahore" target="_blank" aria-label="TikTok"><i
                             class="fab fa-tiktok"></i></a>
                 </div>
             </div>
@@ -1641,6 +2278,20 @@
         </div>
     </footer>
 
+    <!-- ===== MOBILE STICKY BUY BAR ===== -->
+    <div class="mobile-buybar" id="mobileBuybar" aria-hidden="true">
+        <div class="mb-price">
+            <small>Price</small>
+            <strong id="mbPrice">Ask for price</strong>
+        </div>
+        <a href="#" target="_blank" class="mb-btn" id="mbBuy">
+            <i class="fab fa-whatsapp"></i> <span>Order Now</span>
+        </a>
+    </div>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <!-- ===== STICKY STACK ===== -->
     <div class="sticky-right-stack">
         <a href="https://wa.me/923214070098" target="_blank" class="fab-whatsapp">
@@ -1657,11 +2308,14 @@
         </button>
     </div>
 
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <!-- ===== SERVICE MODAL ===== -->
     <div class="service-modal-overlay" id="serviceModalOverlay">
-        <div class="service-modal">
-            <button class="modal-close" id="closeServiceBtn"><i class="fas fa-times"></i></button>
-            <h2><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</h2>
+        <div class="service-modal" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+            <button class="modal-close" id="closeServiceBtn" aria-label="Close"><i class="fas fa-times"></i></button>
+            <h2 id="serviceModalTitle"><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</h2>
             <p class="modal-subtitle">Fill in your details and we'll open WhatsApp with your pre-filled request.</p>
             <form id="homeServiceForm">
                 <div class="form-group">
@@ -1696,58 +2350,353 @@
 
     <!-- ===== LIGHTBOX ===== -->
     <div class="image-lightbox-overlay" id="imageLightbox">
-        <button class="lightbox-close-btn" id="lightboxCloseBtn"><i class="fas fa-times"></i></button>
+        <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close"><i
+                class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image"><i
+                class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image"><i
+                class="fas fa-chevron-right"></i></button>
         <div class="lightbox-image-wrapper">
             <img id="lightboxImage" src="" alt="Full view">
             <img class="lightbox-watermark-logo" src="/images/logo.png" alt="Weighspot" aria-hidden="true">
         </div>
+        <div class="lightbox-counter" id="lbCounter"></div>
     </div>
 
     <script>
-        // ===== IMAGE LIGHTBOX =====
+        const isMobile = () => window.innerWidth <= 768;
+
+        // ===== TOAST =====
+        const toastEl = document.getElementById('toast');
+        let toastTimer;
+        function showToast(msg) {
+            toastEl.textContent = msg;
+            toastEl.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+        }
+
+        // ===== GENERIC SWIPE HELPER =====
+        // Calls onMove(dx) while dragging horizontally, onEnd(dx, fast) when finger lifts.
+        function attachSwipe(el, {onMove, onEnd, onStart}) {
+            let sx = 0, sy = 0, dx = 0, t0 = 0, tracking = false, locked = null;
+            el.addEventListener('touchstart', e => {
+                if (e.touches.length !== 1) return;
+                sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+                dx = 0; t0 = Date.now(); tracking = true; locked = null;
+                if (onStart) onStart();
+            }, {passive: true});
+            el.addEventListener('touchmove', e => {
+                if (!tracking) return;
+                const mx = e.touches[0].clientX - sx;
+                const my = e.touches[0].clientY - sy;
+                if (locked === null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) {
+                    locked = Math.abs(mx) > Math.abs(my) ? 'x' : 'y';
+                }
+                if (locked !== 'x') return;
+                dx = mx;
+                if (onMove) onMove(dx);
+            }, {passive: true});
+            el.addEventListener('touchend', () => {
+                if (!tracking) return;
+                tracking = false;
+                const fast = Date.now() - t0 < 300 && Math.abs(dx) > 30;
+                if (locked === 'x' && onEnd) onEnd(dx, fast);
+                else if (onEnd && locked === null) onEnd(0, false);
+            }, {passive: true});
+            el.addEventListener('touchcancel', () => {tracking = false; if (onEnd) onEnd(0, false);}, {passive: true});
+        }
+
+        // ===== SIDE DRAWER (button + swipe from left edge + swipe to close) =====
+        const drawer = document.getElementById('sideDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const menuToggle = document.getElementById('menuToggle');
+        const drawerClose = document.getElementById('drawerClose');
+        let drawerOpen = false;
+
+        function openDrawer() {
+            drawerOpen = true;
+            drawer.style.transform = '';
+            drawer.classList.add('open');
+            drawerOverlay.classList.add('show');
+            drawer.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll');
+        }
+        function closeDrawer() {
+            drawerOpen = false;
+            drawer.style.transform = '';
+            drawer.classList.remove('open', 'dragging');
+            drawerOverlay.classList.remove('show');
+            drawer.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+        }
+        menuToggle.addEventListener('click', openDrawer);
+        drawerClose.addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+        // swipe-to-close with live drag
+        attachSwipe(drawer, {
+            onStart: () => drawer.classList.add('dragging'),
+            onMove: dx => {if (dx < 0) drawer.style.transform = `translateX(${dx}px)`;},
+            onEnd: (dx, fast) => {
+                drawer.classList.remove('dragging');
+                drawer.style.transform = '';
+                if (dx < -70 || (fast && dx < 0)) closeDrawer();
+            }
+        });
+        attachSwipe(drawerOverlay, {
+            onEnd: (dx) => {if (dx < -50) closeDrawer();}
+        });
+
+        // swipe-from-left-edge to open (mobile only)
+        (function () {
+            let sx = 0, sy = 0, edge = false, dragged = 0;
+            document.addEventListener('touchstart', e => {
+                if (!isMobile() || drawerOpen || e.touches.length !== 1) {edge = false; return;}
+                sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+                edge = sx < 22; dragged = 0;
+            }, {passive: true});
+            document.addEventListener('touchmove', e => {
+                if (!edge) return;
+                const dx = e.touches[0].clientX - sx;
+                const dy = e.touches[0].clientY - sy;
+                if (Math.abs(dy) > Math.abs(dx) * 1.2) {edge = false; return;}
+                dragged = dx;
+            }, {passive: true});
+            document.addEventListener('touchend', () => {
+                if (edge && dragged > 70) openDrawer();
+                edge = false;
+            }, {passive: true});
+        })();
+
+        // ===== GALLERY (thumbs + arrows + swipe + dots + keyboard) =====
+        const stage = document.getElementById('galleryStage');
+        const mainImg = document.getElementById('mainProductImage');
+        const thumbs = [...document.querySelectorAll('.gallery-thumb')];
+        const galPrev = document.getElementById('galPrev');
+        const galNext = document.getElementById('galNext');
+        const galCounter = document.getElementById('galCounter');
+        const galDots = document.getElementById('galDots');
+        const galHint = document.getElementById('galHint');
+
+        let images = thumbs.map(t => t.dataset.img).filter(Boolean);
+        if (!images.length && mainImg) images = [mainImg.getAttribute('src')];
+        let current = Math.max(0, thumbs.findIndex(t => t.classList.contains('active')));
+        let justSwiped = false;
+
+        if (images.length > 1) {
+            galPrev.hidden = false; galNext.hidden = false; galCounter.hidden = false;
+            galDots.classList.add('multi');
+            galDots.innerHTML = images.map(() => '<span></span>').join('');
+            if (isMobile()) galHint.innerHTML = '<i class="fas fa-hand-point-left"></i> Swipe';
+        }
+        if (isMobile()) galHint.style.display = 'none';
+
+        function updateGalleryUI() {
+            galCounter.textContent = `${current + 1} / ${images.length}`;
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+            [...galDots.children].forEach((d, i) => d.classList.toggle('active', i === current));
+            const at = thumbs[current];
+            if (at && at.scrollIntoView && isMobile()) at.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
+        }
+
+        function goTo(i) {
+            if (!images.length) return;
+            current = (i + images.length) % images.length;
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = images[current];
+                mainImg.style.transform = '';
+                mainImg.style.opacity = '1';
+            }, 140);
+            updateGalleryUI();
+        }
+
+        thumbs.forEach((t, i) => t.addEventListener('click', () => goTo(i)));
+        galPrev.addEventListener('click', e => {e.stopPropagation(); goTo(current - 1);});
+        galNext.addEventListener('click', e => {e.stopPropagation(); goTo(current + 1);});
+        updateGalleryUI();
+
+        // swipe on main image
+        if (images.length > 1) {
+            attachSwipe(stage, {
+                onMove: dx => {
+                    mainImg.style.transition = 'none';
+                    mainImg.style.transform = `translateX(${dx * 0.6}px)`;
+                },
+                onEnd: (dx, fast) => {
+                    mainImg.style.transition = '';
+                    mainImg.style.transform = '';
+                    if (Math.abs(dx) > 55 || fast) {
+                        justSwiped = true; setTimeout(() => justSwiped = false, 350);
+                        goTo(dx < 0 ? current + 1 : current - 1);
+                    }
+                }
+            });
+        }
+
+        // desktop hover-zoom
+        if (window.matchMedia('(hover: hover)').matches) {
+            stage.addEventListener('mousemove', e => {
+                const r = stage.getBoundingClientRect();
+                mainImg.style.transformOrigin = `${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`;
+            });
+            stage.addEventListener('mouseenter', () => stage.classList.add('is-zooming'));
+            stage.addEventListener('mouseleave', () => stage.classList.remove('is-zooming'));
+        }
+
+        // ===== LIGHTBOX (with prev/next + swipe) =====
         const lightboxOverlay = document.getElementById('imageLightbox');
         const lightboxImage = document.getElementById('lightboxImage');
         const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-        const mainImg = document.getElementById('mainProductImage');
+        const lbPrev = document.getElementById('lbPrev');
+        const lbNext = document.getElementById('lbNext');
+        const lbCounter = document.getElementById('lbCounter');
+        let lbIndex = 0;
 
-        function openLightbox(src) {
-            lightboxImage.src = src;
-            lightboxOverlay.classList.add('show');
-            document.body.style.overflow = 'hidden';
+        function showLb(i) {
+            lbIndex = (i + images.length) % images.length;
+            lightboxImage.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImage.src = images[lbIndex];
+                lightboxImage.style.transform = '';
+                lightboxImage.style.opacity = '1';
+            }, 120);
+            lbCounter.textContent = images.length > 1 ? `${lbIndex + 1} / ${images.length}` : '';
         }
-
+        function openLightbox() {
+            lbIndex = current;
+            lightboxImage.src = images[lbIndex] || mainImg.src;
+            lbCounter.textContent = images.length > 1 ? `${lbIndex + 1} / ${images.length}` : '';
+            const multi = images.length > 1;
+            lbPrev.style.visibility = lbNext.style.visibility = multi ? 'visible' : 'hidden';
+            lightboxOverlay.classList.add('show');
+            document.body.classList.add('no-scroll');
+        }
         function closeLightbox() {
             lightboxOverlay.classList.remove('show');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
         }
 
-        if (mainImg) {
-            mainImg.addEventListener('click', function () {openLightbox(this.src);});
-        }
-
+        if (mainImg) mainImg.addEventListener('click', () => {if (!justSwiped) openLightbox();});
         lightboxCloseBtn.addEventListener('click', closeLightbox);
-        lightboxOverlay.addEventListener('click', function (e) {
-            if (e.target === lightboxOverlay) closeLightbox();
-        });
+        lbPrev.addEventListener('click', e => {e.stopPropagation(); showLb(lbIndex - 1);});
+        lbNext.addEventListener('click', e => {e.stopPropagation(); showLb(lbIndex + 1);});
+        lightboxOverlay.addEventListener('click', e => {if (e.target === lightboxOverlay) closeLightbox();});
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && lightboxOverlay.classList.contains('show')) closeLightbox();
-        });
-
-        // ===== THUMBNAIL SWITCHING =====
-        document.querySelectorAll('.gallery-thumb').forEach(thumb => {
-            thumb.addEventListener('click', function () {
-                const newSrc = this.dataset.img;
-                if (mainImg) {
-                    mainImg.style.opacity = '0';
-                    setTimeout(() => {
-                        mainImg.src = newSrc;
-                        mainImg.style.opacity = '1';
-                    }, 150);
+        if (images.length > 1) {
+            attachSwipe(lightboxOverlay, {
+                onMove: dx => {lightboxImage.style.transition = 'none'; lightboxImage.style.transform = `translateX(${dx * 0.7}px)`;},
+                onEnd: (dx, fast) => {
+                    lightboxImage.style.transition = ''; lightboxImage.style.transform = '';
+                    if (Math.abs(dx) > 60 || fast) showLb(dx < 0 ? lbIndex + 1 : lbIndex - 1);
                 }
-                document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
             });
+        }
+
+        // ===== KEYBOARD =====
+        document.addEventListener('keydown', e => {
+            const lbOpen = lightboxOverlay.classList.contains('show');
+            if (e.key === 'Escape') {
+                if (lbOpen) closeLightbox();
+                else if (drawerOpen) closeDrawer();
+                else if (overlay.classList.contains('show')) closeModal();
+            }
+            if (e.key === 'ArrowRight') {
+                if (lbOpen) showLb(lbIndex + 1);
+                else if (!overlay.classList.contains('show') && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) goTo(current + 1);
+            }
+            if (e.key === 'ArrowLeft') {
+                if (lbOpen) showLb(lbIndex - 1);
+                else if (!overlay.classList.contains('show') && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) goTo(current - 1);
+            }
+        });
+
+        // ===== DESCRIPTION READ MORE =====
+        (function () {
+            const desc = document.getElementById('productDescription');
+            const btn = document.getElementById('readMoreBtn');
+            if (!desc || !btn) return;
+            requestAnimationFrame(() => {
+                if (desc.scrollHeight > 230) {
+                    desc.classList.add('clamped');
+                    btn.hidden = false;
+                    btn.addEventListener('click', () => {
+                        const open = desc.classList.toggle('clamped') === false;
+                        btn.classList.toggle('open', open);
+                        btn.querySelector('span').textContent = open ? 'Show less' : 'Read more';
+                    });
+                }
+            });
+        })();
+
+        // ===== SHARE =====
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            const data = {title: document.title, text: document.title, url: location.href};
+            try {
+                if (navigator.share) {await navigator.share(data);}
+                else {await navigator.clipboard.writeText(location.href); showToast('Link copied to clipboard');}
+            } catch (err) { /* cancelled */}
+        });
+
+        // ===== MOBILE STICKY BUY BAR =====
+        (function () {
+            const bar = document.getElementById('mobileBuybar');
+            const buy = document.getElementById('mainBuyBtn');
+            const mbBuy = document.getElementById('mbBuy');
+            const mbPrice = document.getElementById('mbPrice');
+            const footer = document.getElementById('siteFooter');
+            if (!bar || !buy) return;
+
+            mbBuy.href = buy.href;
+            const label = buy.textContent.trim();
+            if (label) mbBuy.querySelector('span').textContent = label.length > 22 ? 'Order Now' : label;
+
+            const priceEl = document.querySelector('.product-detail-info .price .current');
+            const askEl = document.querySelector('.product-detail-info .ask-price-big');
+            if (priceEl) mbPrice.textContent = priceEl.textContent.trim();
+            else if (askEl) mbPrice.textContent = askEl.textContent.trim();
+
+            let buyVisible = true, footerVisible = false;
+            const update = () => {
+                const show = isMobile() && !buyVisible && !footerVisible;
+                bar.classList.toggle('show', show);
+                bar.setAttribute('aria-hidden', String(!show));
+                document.body.classList.toggle('has-buybar', show);
+            };
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(en => {buyVisible = en[0].isIntersecting; update();}).observe(buy);
+                new IntersectionObserver(en => {footerVisible = en[0].isIntersecting; update();}).observe(footer);
+            }
+            window.addEventListener('resize', update);
+        })();
+
+        // ===== SCROLL EFFECTS (progress bar, header shadow, back-to-top) =====
+        (function () {
+            const bar = document.getElementById('scrollProgress');
+            const header = document.getElementById('siteHeader');
+            const topBtn = document.getElementById('backToTop');
+            let ticking = false;
+            function onScroll() {
+                const h = document.documentElement;
+                const max = h.scrollHeight - h.clientHeight;
+                bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+                header.classList.toggle('scrolled', h.scrollTop > 10);
+                topBtn.classList.toggle('show', h.scrollTop > 500);
+                ticking = false;
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) {requestAnimationFrame(onScroll); ticking = true;}
+            }, {passive: true});
+            topBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+            onScroll();
+        })();
+
+        // ===== LAZY-LOAD RELATED IMAGES =====
+        document.querySelectorAll('.related-card img').forEach(img => {
+            img.loading = 'lazy';
+            img.decoding = 'async';
         });
 
         // ===== RATING SYSTEM =====
@@ -1836,8 +2785,8 @@
         const cancelBtn = document.getElementById('cancelServiceBtn');
         const form = document.getElementById('homeServiceForm');
 
-        function openModal() {overlay.classList.add('show'); document.body.style.overflow = 'hidden';}
-        function closeModal() {overlay.classList.remove('show'); document.body.style.overflow = '';}
+        function openModal() {overlay.classList.add('show'); document.body.classList.add('no-scroll');}
+        function closeModal() {overlay.classList.remove('show'); document.body.classList.remove('no-scroll');}
 
         if (openBtn) openBtn.addEventListener('click', openModal);
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -1878,9 +2827,9 @@
         // ===== SECURITY =====
         document.addEventListener('contextmenu', e => {if (e.target.tagName === 'IMG') e.preventDefault();});
         document.addEventListener('dragstart', e => {if (e.target.tagName === 'IMG') e.preventDefault();});
-        </script>
+    </script>
 
-<script src="/search-suggest.js"></script>
+    <script src="/search-suggest.js"></script>
 
 </body>
 
