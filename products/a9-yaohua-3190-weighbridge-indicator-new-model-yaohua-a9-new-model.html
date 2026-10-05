@@ -132,6 +132,11 @@
             font-family: inherit;
         }
 
+        /* hidden attribute must always win over display rules */
+        [hidden] {
+            display: none !important;
+        }
+
         :focus-visible {
             outline: 3px solid rgba(4, 76, 161, 0.45);
             outline-offset: 2px;
@@ -171,7 +176,17 @@
             animation: fadeInUp 0.7s ease forwards;
         }
 
-      
+        /* ===== SCROLL PROGRESS ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-blue), #3394e4);
+            z-index: 100001;
+            transition: width 0.1s linear;
+        }
 
         /* ===== AYAH TOP BAR ===== */
         .ayah-top-bar {
@@ -739,6 +754,43 @@
             min-width: 0;
         }
 
+        /* display order: info -> price -> actions -> description -> video -> trust */
+        .product-detail-info>* {
+            order: 5;
+        }
+
+        .product-detail-info>.category {
+            order: 1;
+        }
+
+        .product-detail-info>h1 {
+            order: 2;
+        }
+
+        .product-detail-info>.model-number {
+            order: 3;
+        }
+
+        .product-detail-info>.action-buttons {
+            order: 6;
+        }
+
+        .product-detail-info>.description {
+            order: 8;
+        }
+
+        .product-detail-info>.read-more-btn {
+            order: 9;
+        }
+
+        .product-detail-info>.product-video-wrapper {
+            order: 10;
+        }
+
+        .product-detail-info>.trust-strip {
+            order: 11;
+        }
+
         .product-detail-info .category {
             font-size: 12px;
             color: var(--primary-blue);
@@ -910,21 +962,31 @@
         .price-ask-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 6px 14px;
             flex-wrap: wrap;
-            padding: 12px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            padding: 12px 16px;
+            background: var(--primary-light);
+            border: 1px solid rgba(4, 76, 161, 0.15);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: var(--radius);
         }
 
         .price-ask-container .ask-price-big {
-            font-size: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
             font-weight: 800;
-            color: #f39c12;
+            color: var(--primary-blue);
+        }
+
+        .price-ask-container .ask-price-big i {
+            font-size: 18px;
         }
 
         .price-ask-container .ask-price-sub {
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 500;
             color: var(--text-light);
         }
 
@@ -937,7 +999,7 @@
         }
 
         .product-detail-info .description.clamped {
-            max-height: 170px;
+            max-height: 130px;
             overflow: hidden;
         }
 
@@ -1161,7 +1223,23 @@
             gap: 10px;
         }
 
-        .related-section h2 span {
+        .related-section h2 div {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .related-section h2 div::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 52px;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+        }
+
+        .related-section h2 div span {
             color: var(--primary-blue);
         }
 
@@ -1176,65 +1254,107 @@
 
         .related-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
         }
 
         .related-card {
+            display: flex;
+            flex-direction: column;
             background: var(--white);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius);
+            border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
             transition: var(--transition);
         }
 
-        .related-card:hover {
+        .related-card:hover,
+        .related-card:focus-within {
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
             border-color: var(--primary-blue);
         }
 
         .related-card .image {
-            height: 260px;
-            background: var(--light-gray);
+            height: 180px;
+            background: linear-gradient(180deg, #f8f9fb 0%, #eceff5 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
         }
 
         .related-card .image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 10px;
+            padding: 12px;
+        }
+
+        .related-card .image img:not(.card-brand-logo) {
+            transition: transform 0.45s ease;
+        }
+
+        .related-card:hover .image img:not(.card-brand-logo) {
+            transform: scale(1.07);
         }
 
         .related-card .image .card-brand-logo {
             position: absolute;
-            right: 12px;
-            top: 80%;
-            width: 80px;
-            height: 38px;
+            right: 8px;
+            bottom: 8px;
+            top: auto;
+            width: 54px;
+            height: 26px;
+            padding: 0;
             object-fit: contain;
+            opacity: 0.5;
             pointer-events: none;
         }
 
         .related-card .info {
-            padding: 10px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+            padding: 12px 14px 14px;
+            border-top: 1px solid #eef0f4;
         }
 
         .related-card .info h4 {
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 2px;
+            line-height: 1.4;
+            min-height: 36px;
+            color: var(--text-dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .related-card .info .price {
-            font-size: 15px;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .related-card .info::after {
+            content: 'View Details \2192';
+            margin-top: auto;
+            padding-top: 6px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--primary-blue);
+            opacity: 0.75;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .related-card:hover .info::after {
+            opacity: 1;
+            transform: translateX(4px);
         }
 
         /* ===== FOOTER ===== */
@@ -1773,7 +1893,7 @@
             }
 
             .related-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -1877,7 +1997,7 @@
                 display: grid;
                 grid-auto-flow: column;
                 grid-template-columns: none;
-                grid-auto-columns: 62%;
+                grid-auto-columns: clamp(150px, 44vw, 200px);
                 gap: 12px;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
@@ -1896,7 +2016,7 @@
             }
 
             .related-card .image {
-                height: 180px;
+                height: 150px;
             }
 
             .footer-content {
@@ -1995,11 +2115,15 @@
             }
 
             .related-grid {
-                grid-auto-columns: 70%;
+                grid-auto-columns: clamp(145px, 46vw, 180px);
             }
 
             .related-card .image {
-                height: 150px;
+                height: 135px;
+            }
+
+            .related-card .info {
+                padding: 10px 11px 12px;
             }
 
             .gallery-thumb {
@@ -2060,7 +2184,7 @@
 
 <body>
 
-  
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ===== SWIPE SIDE DRAWER ===== -->
     <div class="drawer-overlay" id="drawerOverlay"></div>
@@ -2626,22 +2750,66 @@
             }
         });
 
-        // ===== DESCRIPTION READ MORE =====
+        // ===== REMOVE EMOJIS FROM PRICE / BUTTON TEXT (professional look) =====
+        (function () {
+            const EMOJI = /[\p{Extended_Pictographic}\uFE0F\u200D\u20E3]/gu;
+            function strip(root) {
+                const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+                const nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                nodes.forEach(n => {
+                    const clean = n.nodeValue.replace(EMOJI, '').replace(/[ \t]{2,}/g, ' ');
+                    if (clean !== n.nodeValue) n.nodeValue = clean;
+                });
+            }
+            ['.price-ask-container', '.product-detail-info .price', '.whatsapp-buy-btn', '.related-card .price']
+                .forEach(sel => document.querySelectorAll(sel).forEach(strip));
+
+            // replace emoji with a clean icon on "Ask for Price"
+            const ask = document.querySelector('.price-ask-container .ask-price-big');
+            if (ask && !ask.querySelector('i')) {
+                ask.textContent = ask.textContent.trim();
+                ask.insertAdjacentHTML('afterbegin', '<i class="fas fa-tags"></i>');
+            }
+        })();
+
+        // ===== DESCRIPTION READ MORE (re-measures after load, fonts, images, resize) =====
         (function () {
             const desc = document.getElementById('productDescription');
             const btn = document.getElementById('readMoreBtn');
             if (!desc || !btn) return;
-            requestAnimationFrame(() => {
-                if (desc.scrollHeight > 230) {
-                    desc.classList.add('clamped');
+            const LIMIT = 130;          // clamped height in px (matches CSS)
+            let expanded = false;
+
+            function apply() {
+                desc.classList.toggle('clamped', !expanded);
+                btn.classList.toggle('open', expanded);
+                btn.querySelector('span').textContent = expanded ? 'Show less' : 'Read more';
+            }
+
+            function measure() {
+                desc.classList.remove('clamped');
+                const fullHeight = desc.scrollHeight;
+                if (fullHeight > LIMIT + 40) {
                     btn.hidden = false;
-                    btn.addEventListener('click', () => {
-                        const open = desc.classList.toggle('clamped') === false;
-                        btn.classList.toggle('open', open);
-                        btn.querySelector('span').textContent = open ? 'Show less' : 'Read more';
-                    });
+                    apply();
+                } else {
+                    btn.hidden = true;
+                    desc.classList.remove('clamped');
                 }
+            }
+
+            btn.addEventListener('click', () => {
+                expanded = !expanded;
+                apply();
+                if (!expanded) desc.scrollIntoView({behavior: 'smooth', block: 'nearest'});
             });
+
+            requestAnimationFrame(measure);
+            window.addEventListener('load', measure);
+            window.addEventListener('resize', measure);
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+            desc.addEventListener('load', measure, true);   // images inside description
         })();
 
         // ===== SHARE =====
@@ -2755,7 +2923,7 @@
 
                     if (messageEl) {
                         messageEl.className = 'rating-message success';
-                        messageEl.textContent = `Thank you! You rated ${ratingValue} star${ratingValue > 1 ? 's' : ''} ⭐`;
+                        messageEl.textContent = `Thank you! You rated ${ratingValue} star${ratingValue > 1 ? 's' : ''}.`;
                     }
 
                     localStorage.setItem('rated_' + productId, 'true');
