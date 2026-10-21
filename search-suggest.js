@@ -5,8 +5,8 @@
 (function () {
     'use strict';
 
-    var SUPABASE_URL = 'https://ukemuqyzflbqridefzox.supabase.co';
-    var SUPABASE_KEY = 'sb_publishable_a6vdgDr-K2G5Mq3kQ96CWQ_M41zMEMq';
+    var SUPABASE_URL = 'https://dfmhtzngblbpcrinbtvm.supabase.co';
+    var SUPABASE_KEY = 'sb_publishable_89Q4Lue48wfo8JBYRR8JYQ_3fN8UyJl';
     var MAX_SUGGESTIONS = 8;
 
     /* ---------- CSS ---------- */
