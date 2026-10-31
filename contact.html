@@ -274,6 +274,139 @@
             background: var(--white);
         }
 
+             /* ===== SIDE DRAWER (swipe menu) ===== */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 100002;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .drawer-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 300px;
+            max-width: 86vw;
+            background: var(--white);
+            z-index: 100003;
+            transform: translateX(-102%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 8px 0 32px rgba(0, 0, 0, 0.2);
+            touch-action: pan-y;
+        }
+
+        .side-drawer.open {
+            transform: translateX(0);
+        }
+
+        .side-drawer.dragging {
+            transition: none;
+        }
+
+        .drawer-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+        }
+
+        .drawer-head img {
+            height: 36px;
+            width: auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 3px 8px;
+        }
+
+        .drawer-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .drawer-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 14px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .drawer-link i {
+            width: 22px;
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 16px;
+        }
+
+        .drawer-link:hover,
+        .drawer-link:active {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+        }
+
+        .drawer-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 10px 6px;
+        }
+
+        .drawer-foot {
+            padding: 14px 16px 18px;
+            border-top: 1px solid var(--border-color);
+            background: var(--light-gray);
+        }
+
+        .drawer-foot .drawer-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 60px;
+            margin-bottom: 10px;
+        }
+
+        .drawer-foot p {
+            font-size: 11px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.6;
+        }
+
         /* ===== PROMO BAR ===== */
         .promo-bar {
             background: var(--primary-dark);
@@ -1114,6 +1247,31 @@
 </head>
 
 <body>
+
+        <!-- ===== SWIPE SIDE DRAWER ===== -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer" aria-hidden="true" aria-label="Menu">
+        <div class="drawer-head">
+            <img src="/images/nav_logo.jpeg" alt="Weighspot Scales">
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body">
+            <a href="/index.html" class="drawer-link"><i class="fas fa-house"></i> Home</a>
+            <a href="/products.html" class="drawer-link"><i class="fas fa-scale-balanced"></i> Products</a>
+            <a href="/services.html" class="drawer-link"><i class="fas fa-gears"></i> Services</a>
+            <a href="/home-service.html" class="drawer-link"><i class="fas fa-screwdriver-wrench"></i> Book a Home Service</a>
+            <a href="/contact.html" class="drawer-link"><i class="fas fa-phone-volume"></i> Contact</a>
+            <div class="drawer-divider"></div>
+            <a href="/privacy.html" class="drawer-link"><i class="fas fa-shield-alt"></i> Privacy</a>
+            <a href="https://g.page/r/CZSRkhaMgEGFEBE/review" target="_blank" class="drawer-link"><i
+                    class="fas fa-star"></i> Give us a Review</a>
+        </div>
+        <div class="drawer-foot">
+            <a href="https://wa.me/923214070098" target="_blank" class="drawer-wa"><i class="fab fa-whatsapp"></i> Chat
+                on WhatsApp</a>
+            <p>Mon-Sat: 11:00 AM - 7:00 PM<br>Railway Road, Lahore</p>
+        </div>
+    </aside>
 
     <!-- ===== AYAH TOP BAR ===== -->
     <div class="ayah-top-bar">
